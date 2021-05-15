@@ -46,7 +46,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 header .logo {
