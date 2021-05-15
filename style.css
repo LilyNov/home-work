@@ -156,10 +156,12 @@ header .logo {
 
 .tasks .container {
   display: flex;
+  margin: -15px;
 }
 
-.tasks .list:not(:last-child) {
-  margin-right: 30px;
+.tasks .list {
+  margin: 15px;
+  width: calc((100% - 6 * 15px) / 3);
 }
 
 .work-img {
