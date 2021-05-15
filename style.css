@@ -19,18 +19,20 @@ img {
 }
 
 header {
+  padding: 20px;
+  border: 1px solid #dddddd;
+}
+
+header .link {
   display: flex;
   align-items: center;
   justify-content: left;
-  padding: 20px;
-  border: 1px solid #dddddd;
 }
 
 .avatar {
   margin-right: 10px;
   width: 40px;
   border-radius: 50%;
-  border: 2px solid rgb(250, 107, 107);
 }
 
 .avatar-title {
@@ -90,8 +92,9 @@ header {
 .home-work .list {
   width: 250px;
   padding: 40px;
-  border: 2px solid rgba(245, 56, 56, 1);
-  border-radius: 6px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 .list-title {
@@ -228,7 +231,6 @@ footer p {
   font-weight: 400;
   font-size: 14px;
   line-height: 2.14;
-
   color: #4f5665;
 }
 
