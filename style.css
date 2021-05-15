@@ -33,11 +33,6 @@ img {
   color: rgba(79, 86, 101, 1);
 }
 
-.link:hover,
-.link:focus {
-  color: rgba(245, 56, 56, 1);
-}
-
 header {
   display: flex;
   align-items: center;
@@ -277,4 +272,9 @@ footer p {
   font-size: 14px;
   line-height: 2.14;
   color: #afb5c0;
+}
+
+.link:hover,
+.link:focus {
+  color: rgba(245, 56, 56, 1);
 }
