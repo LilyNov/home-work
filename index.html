@@ -5,44 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home work</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-   <h1>Новикова Лилия Павловна</h1>
-   <h3>17.02.1985</h3>
-   <p>
-       <pre>
-        Люблю в свободное время заниматься творчеством - скрапбукинг, декупаж. <br> Когда провожу время с друзьями и родственниками, снимаю мини видео про отдых. <br> На выходных, если погода хорошая, катаемся с сыном на велосипедах. <br> Летом очень нравится отдых в лесу с палатками.
-       </pre>
-   </p>
-   <q><i>Кто пассивно ждет</i> — в конце концов <b>получает ожидаемое</b>, но только то, <small>что осталось</small> после тех, кто <big>действовал <u>энергично</u></big>.</q> Авраам Линкольн.
-  
-   <br>
-   <br>
-   <br> 
-   <p>M = y<sub>11</sub>k<sup>4</sup>x</p>
-   <br>
+    <header>
+        <img class="avatar" src="https://ru.gravatar.com/userimage/203503918/e84efd21e6736b7891107fbe9bc03bd8.jpg?size=200" alt="фото">
+        <p class="avatar-title">Новикова Лилия</p>
+    </header>
+    <section class="section-quote">
+        <div class="container container-quote">
+            <div>
+                <q class="quote">Стремление вперед — вот цель жизни. Пусть же вся жизнь будет стремлением, и тогда в ней будут высоко
+                    прекрасные часы.
+                </q>
+                <p class="quote-author">Максим Горький</p>
+            </div>
+            <img class="quote-img" src="./img/Illustration1.png" alt="Человек за ноутбуком" width="500">
+        </div>
+    </section>
 
-   <!-- Ссылки на задания -->
-   <ul>
-        <li><a href="./tasks/task2/task2.html">Задание №2. Спецсимволы</a></li>
-        <li>Задание №3. Форматирование текста
-            <ul>
-                <li><a href="./tasks/task3/task3-1.html">Цитата</a></li>
-                <li><a href="./tasks/task3/task3-2.html">Формула</a></li>
+    <section class="section home-work">
+        <div class="container home-work">
+            <img class="quote-img" src="./img/Illustration2.png" alt="Человек за ноутбуком">
+            <ul class="list">
+                <h3 class="list-title">Задания для проверки</h3>
+                <li class="item">
+                    <img class="item-img" src="./img/item.png" alt="checked">
+                    <a class="link" href="./hm-1/index.html">html</a></li>
+                <li class="item">
+                    <img class="item-img" src="./img/item.png" alt="checked" width="500">
+                    <a class="link" href="./hm-2/index.html">css</a></li>
             </ul>
-        </li>
-        <li><a href="./tasks/task4/task4.html">Задание №4. Маркированные списки</a></li>
-        <li><a href="./tasks/task5/task5.html">Задание №5. Ссылки</a></li>
-        <li><a href="./tasks/task6/task6-1.html">Задание №6. Блок статей</a></li>
-        <li><a href="./tasks/task7/task7.html">Задание №7. Таблицы</a></li>
-        <li><a href="./tasks/task8/task8.html">Задание №8. Таблицы</a></li>
-        <li><a href="./tasks/task9/task9.html">Задание №9. Таблицы. Меню</a></li>
-        <li><a href="./tasks/task10/task10.html">Задание №10. Мультимедиа</a></li>
-        <li><a href="./tasks/task11/task11.html">Задание №11. Формы. Элементы ввода данных</a></li>
-        <li><a href="./tasks/task12/task12.html">Задание №12. Формы. Элементы ввода данных</a></li>
-        <li><a href="./tasks/task13/task13.html">Задание №13. Формы. Элементы ввода данных</a></li>
-    </ul>
-
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer">
+            <ul class="list">
+                <li class="item">
+                    <a href="https://instagram.com/novikova__lily/" aria-label="Ссылка на instagram" class="link">
+                        <svg class="social-icon" width="20" height="20">
+                            <use href="./img/sprite.svg#icon-instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://facebook.com/lily.novikova.988/" aria-label="Ссылка на facebook" class="link face">
+                        <svg class="social-icon" width="20" height="20">
+                            <use href="./img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://linkedin.com/in/lily-novikova-612178133/" aria-label="Ссылка на linkedin" class="link linkd">
+                        <svg class="social-icon" width="20" height="20">
+                            <use href="./img/sprite.svg#icon-linkedin"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>&copy; 2021 Lilia Novikova</p>
+    </footer>
 </body>
 </html>
