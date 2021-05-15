@@ -58,11 +58,13 @@ header .link {
 .container-quote {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .quote {
   display: inline-block;
   margin-bottom: 10px;
+  width: 500px;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.4;
@@ -74,6 +76,10 @@ header .link {
   font-weight: 400;
   line-height: 1.4;
   color: rgba(79, 86, 101, 1);
+}
+
+.quote-img {
+  width: 500px;
 }
 
 /* section home-work */
