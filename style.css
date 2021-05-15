@@ -80,6 +80,10 @@ header .logo {
   background-color: #e5e5e5;
 }
 
+.quote .container {
+  align-items: flex-start;
+}
+
 .quote .list {
   padding: 30px;
   width: calc(100% / 2);
@@ -94,7 +98,6 @@ header .logo {
 }
 
 .quote-author {
-  margin-bottom: 50px;
   font-size: 25px;
   font-weight: 400;
   line-height: 1.4;
@@ -103,6 +106,34 @@ header .logo {
 
 .img {
   width: calc(100% / 2);
+}
+
+@media screen and (max-width: 1199px) {
+  .quote .list {
+    padding: 20px;
+  }
+
+  .quote-text {
+    font-size: 20px;
+  }
+
+  .quote-author {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .img {
+    display: none;
+  }
+
+  .quote-text {
+    font-size: 15px;
+  }
+
+  .quote-author {
+    font-size: 10px;
+  }
 }
 
 /* section home-work */
