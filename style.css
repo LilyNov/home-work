@@ -89,14 +89,14 @@ header .link {
   padding-bottom: 60px;
 }
 
-.container.home-work {
+.home-work .container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
 .home-work .list {
-  width: 250px;
+  width: 400px;
   padding: 40px;
   border: 1px solid #dddddd;
   border-radius: 10px;
@@ -108,6 +108,7 @@ header .link {
   font-size: 30px;
   font-weight: 500;
   line-height: 1.4;
+  text-align: center;
 }
 
 .item-img {
@@ -136,10 +137,67 @@ header .link {
   color: rgba(79, 86, 101, 1);
 }
 
+/* page home-work */
+
+.section.tasks {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.tasks .container {
+  display: flex;
+}
+
+.tasks .list:not(:last-child) {
+  margin-right: 30px;
+}
+
+.work-img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.tasks .item-img {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(47, 171, 115, 1);
+  border-radius: 50%;
+}
+
+.link.home-work {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 2.14;
+  color: #4f5665;
+}
+
+.button {
+  display: inline-block;
+  margin: 20px;
+  padding: 6px 15px;
+  font-size: 16px;
+  border-color: transparent;
+  color: #ffffff;
+  background-color: rgba(245, 56, 56, 1);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  color: rgba(245, 56, 56, 1);
+  background-color: #ffffff;
+  border: 1px solid rgba(245, 56, 56, 1);
+}
+
 /* footer */
 
 footer {
-  padding: 40px;
+  padding: 20px;
   background: #f8f8f8;
 }
 .footer {
@@ -198,64 +256,8 @@ footer {
 
 footer p {
   text-align: center;
-  color: #afb5c0;
-}
-
-/* page home-work */
-
-.container.tasks {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.tasks .list {
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-}
-
-.tasks .list:not(:last-child) {
-  margin-right: 30px;
-}
-
-.work-img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-}
-
-.tasks .item-img {
-  display: block;
-  width: 8px;
-  height: 8px;
-  background-color: rgba(47, 171, 115, 1);
-  border-radius: 50%;
-}
-
-.link.home-work {
-  text-transform: capitalize;
   font-weight: 400;
   font-size: 14px;
   line-height: 2.14;
-  color: #4f5665;
-}
-
-.button {
-  display: inline-block;
-  margin: 20px;
-  padding: 6px 15px;
-  font-size: 16px;
-  border-color: transparent;
-  color: #ffffff;
-  background-color: rgba(245, 56, 56, 1);
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.button:hover,
-.button:focus {
-  color: rgba(245, 56, 56, 1);
-  background-color: #ffffff;
-  border: 1px solid rgba(245, 56, 56, 1);
+  color: #afb5c0;
 }
