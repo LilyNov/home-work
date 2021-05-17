@@ -1,0 +1,7 @@
+section > div {
+  border: 4px dashed red;
+}
+
+p {
+  border: 4px double red;
+}
