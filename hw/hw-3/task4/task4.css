@@ -1,0 +1,11 @@
+p {
+  font-size: 2em;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
