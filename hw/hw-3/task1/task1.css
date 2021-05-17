@@ -1,0 +1,27 @@
+body {
+  font-weight: normal;
+  line-height: 1.18;
+  font-size: 16px;
+
+  background-image: url('https://cdn.pixabay.com/photo/2017/02/15/11/05/texture-2068283_1280.jpg');
+}
+
+.text-1 {
+  color: #ff0066;
+}
+
+.text-2 {
+  color: darkgreen;
+}
+
+.text-3 {
+  color: rgb(15, 44, 103);
+}
+
+.text-4 {
+  color: hsl(36, 100%, 50%);
+}
+
+.text-5 {
+  color: rgba(255, 0, 0, 0.8);
+}

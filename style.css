@@ -258,6 +258,14 @@ header .logo {
   }
 }
 
+/* hw-3 */
+
+.section-hw {
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* footer */
 
 footer {
