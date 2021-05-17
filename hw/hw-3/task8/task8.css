@@ -1,0 +1,7 @@
+section > div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 2px solid blue;
+  border-radius: 50%;
+}
