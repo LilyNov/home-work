@@ -2,3 +2,11 @@
 .right {
   width: 20%;
 }
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
