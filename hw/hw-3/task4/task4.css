@@ -2,10 +2,10 @@ p {
   font-size: 2em;
 }
 
-.text-bold {
+span:first-child {
   font-weight: bold;
 }
 
-.text-italic {
+span:last-child {
   font-style: italic;
 }

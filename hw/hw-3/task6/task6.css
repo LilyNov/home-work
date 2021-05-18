@@ -2,10 +2,10 @@ p {
   word-spacing: 20px;
 }
 
-.text-1 {
+span:first-child {
   letter-spacing: 5px;
 }
 
-.text-2 {
+span:last-child {
   text-shadow: 5px 5px 1px rgb(245 56 56 / 50%);
 }

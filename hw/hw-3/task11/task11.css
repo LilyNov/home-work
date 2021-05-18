@@ -1,0 +1,19 @@
+section > div {
+  width: 100px;
+  height: 100px;
+
+  background-color: red;
+}
+
+p {
+  width: 50%;
+  height: 50%;
+  margin-left: 50%;
+  margin-bottom: 0;
+
+  background-color: blue;
+}
+
+p:last-child {
+  margin: 0;
+}
