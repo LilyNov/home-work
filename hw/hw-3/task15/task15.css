@@ -1,0 +1,8 @@
+section > div {
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  background-image: url('https://vjoy.cc/wp-content/uploads/2019/12/dlya-lich-dnev-25.jpg');
+  background-repeat: space;
+  background-size: 25%;
+}
