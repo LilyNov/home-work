@@ -157,6 +157,9 @@ header .logo {
   text-align: center;
 }
 
+.list.main {
+  text-transform: uppercase;
+}
 .item-img {
   margin-right: 8px;
   width: 30px;
@@ -167,7 +170,6 @@ header .logo {
   display: flex;
   align-items: center;
   list-style: none;
-  text-transform: uppercase;
 }
 
 .item:not(:last-child) {
@@ -205,7 +207,6 @@ header .logo {
 }
 
 .link.home-work {
-  text-transform: capitalize;
   font-weight: 400;
   font-size: 14px;
   line-height: 2.14;
