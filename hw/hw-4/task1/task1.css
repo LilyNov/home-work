@@ -1,0 +1,12 @@
+section div {
+  width: 90px;
+  border: 1px solid black;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
