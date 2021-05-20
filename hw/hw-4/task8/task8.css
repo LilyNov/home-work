@@ -1,0 +1,33 @@
+section {
+  position: relative;
+}
+
+section div {
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+.red {
+  position: absolute;
+  left: 115px;
+  top: 100px;
+  background-color: red;
+}
+
+.green {
+  position: absolute;
+  background-color: green;
+}
+
+.blue {
+  position: absolute;
+  left: 115px;
+  background-color: blue;
+}
+
+.black {
+  position: absolute;
+  top: 100px;
+  background-color: black;
+}
