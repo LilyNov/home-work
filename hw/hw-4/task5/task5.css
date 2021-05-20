@@ -1,9 +1,17 @@
+section div {
+  display: list-item;
+  list-style-type: upper-alpha;
+}
+
+div div {
+  list-style: none;
+}
 .block {
   display: block;
 }
-.inline {
+/* .inline {
   display: inline;
-}
+} */
 .inline-block {
   display: inline-block;
 }
