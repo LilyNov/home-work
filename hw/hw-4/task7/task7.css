@@ -5,6 +5,7 @@
 .one div,
 .two div {
   border: 1px solid black;
+  padding: 5px;
 }
 
 div:nth-child(odd) {
@@ -15,6 +16,6 @@ div:nth-child(even) {
   float: right;
 }
 
-.two div {
-  display: inline;
+.two {
+  display: inline-block;
 }
