@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.one div,
+.two div {
+  border: 1px solid black;
+}
+
+div:nth-child(odd) {
+  float: left;
+}
+
+div:nth-child(even) {
+  float: right;
+}
+
+.two div {
+  display: inline;
+}
