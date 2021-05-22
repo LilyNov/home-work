@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-end;
-  align-items: center;
   width: 350px;
   height: 130px;
   padding: 5px;

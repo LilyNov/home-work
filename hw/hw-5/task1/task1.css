@@ -1,1 +1,26 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
+.item-1 {
+  align-self: flex-start;
+}
+
+.item-2,
+.item-4 {
+  align-self: center;
+}
+
+.item-3 {
+  align-content: stretch;
+}
+
+.item-4 {
+  /* align-self: center; */
+}
+
+.item-5 {
+  align-self: flex-end;
+}
