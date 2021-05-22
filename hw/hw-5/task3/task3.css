@@ -1,3 +1,44 @@
-section div {
+div[class|='item'] {
   border: 2px solid black;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .flex-container {
+    display: flex;
+  }
+
+  .item-2 {
+    width: 25%;
+  }
+
+  .item-3 {
+    width: 25%;
+    order: 2;
+  }
+
+  .item-4 {
+    width: 50%;
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item-2 {
+    width: 20%;
+  }
+
+  .item-3 {
+    width: 20%;
+    order: 2;
+  }
+
+  .item-4 {
+    width: 50%;
+    order: 1;
+  }
 }
