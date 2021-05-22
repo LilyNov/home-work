@@ -1,0 +1,30 @@
+.list {
+  display: flex;
+  width: 490px;
+  height: 127px;
+  margin-left: 30px;
+  border: 2px solid black;
+}
+
+.list div {
+  height: 20px;
+  border: 2px solid black;
+}
+
+.item-1 {
+  align-self: flex-end;
+}
+
+.item-2,
+.item-5 {
+  align-self: center;
+}
+
+.item-3 {
+  align-items: flex-start;
+}
+
+.item-4 {
+  order: 1;
+  align-self: flex-end;
+}

@@ -107,6 +107,20 @@ header .logo {
   width: 40%;
 }
 
+@media screen and (max-width: 780px) {
+  .img {
+    display: none;
+  }
+
+  .quote-text {
+    font-size: 15px;
+  }
+
+  .quote-author {
+    font-size: 10px;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .quote .list {
     padding: 20px;
@@ -118,20 +132,6 @@ header .logo {
 
   .quote-author {
     font-size: 15px;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .img {
-    display: none;
-  }
-
-  .quote-text {
-    font-size: 15px;
-  }
-
-  .quote-author {
-    font-size: 10px;
   }
 }
 
@@ -160,6 +160,7 @@ header .logo {
 .list.main {
   text-transform: uppercase;
 }
+
 .item-img {
   margin-right: 8px;
   width: 30px;
@@ -195,7 +196,8 @@ header .logo {
 }
 
 .tasks .item-img {
-  display: inline-block;
+  position: absolute;
+  top: 35%;
   width: 8px;
   height: 8px;
   background-color: rgba(47, 171, 115, 1);
@@ -203,10 +205,12 @@ header .logo {
 }
 
 .tasks .item {
+  position: relative;
   align-items: baseline;
 }
 
 .link.home-work {
+  margin-left: 15px;
   font-weight: 400;
   font-size: 14px;
   line-height: 2.14;
@@ -233,20 +237,12 @@ header .logo {
   border: 1px solid rgba(245, 56, 56, 1);
 }
 
-@media screen and (max-width: 1199px) {
-  .container.home-work {
-    flex-wrap: wrap;
-  }
-
-  .home-work .list {
-    width: 40%;
-    padding: 20px 20px;
-  }
-}
-
 @media screen and (max-width: 780px) {
+  .home-work .list {
+    width: 50%;
+  }
+
   .container.home-work {
-    display: block;
     margin-left: auto;
     margin-right: auto;
   }
@@ -257,7 +253,18 @@ header .logo {
 
   .link.home-work {
     font-size: 12px;
-    line-height: 1.18;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .container.home-work {
+    flex-wrap: wrap;
+  }
+
+  .home-work .list {
+    width: 40%;
+    padding: 20px 20px;
   }
 }
 
