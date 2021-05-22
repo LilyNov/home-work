@@ -1,0 +1,35 @@
+.header-overlay {
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+    height: 400px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1600px;
+    height: 600px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.header-overlay {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #757575;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(
+      to right,
+      rgba(248, 248, 248, 0.5),
+      rgba(248, 248, 248, 0.5)
+    ),
+    url('../img/hero/objects-2.jpg');
+}
