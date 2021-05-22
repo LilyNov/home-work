@@ -13,14 +13,6 @@
   align-self: center;
 }
 
-.item-3 {
-  align-content: stretch;
-}
-
-.item-4 {
-  /* align-self: center; */
-}
-
 .item-5 {
   align-self: flex-end;
 }

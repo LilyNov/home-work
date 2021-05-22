@@ -1,1 +1,37 @@
+div[class|='flex-container'] {
+  display: flex;
+}
 
+.flex-container-400 {
+  width: 400px;
+}
+
+.flex-container-400 div {
+  flex-basis: 120px;
+}
+
+.flex-container-400 .item-2,
+.flex-container-400 .item-4 {
+  flex-shrink: 3;
+}
+
+.flex-container-500 {
+  width: 500px;
+}
+
+.flex-container-500 div {
+  flex: auto;
+}
+
+.flex-container-600 {
+  width: 600px;
+}
+.flex-container-600 .item-1,
+.flex-container-600 .item-2 {
+  flex-grow: 1;
+}
+
+.flex-container-600 .item-3,
+.flex-container-600 .item-4 {
+  flex-grow: 2;
+}
