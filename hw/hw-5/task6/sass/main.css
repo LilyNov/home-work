@@ -658,8 +658,14 @@ footer .title {
   background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(248, 248, 248, 0.5)), url("../img/hero/objects-6.jpg");
 }
 
+.section-shop .title {
+  text-transform: uppercase;
+}
+
 .section-shop .shop-img {
+  display: block;
   width: 250px;
+  height: auto;
 }
 
 .section-shop .list {
@@ -670,14 +676,33 @@ footer .title {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin: -15;
 }
 
 .section-shop .item {
-  margin-bottom: 30px;
+  margin: 15px;
+  border: 1px solid #b0855b;
+  border-radius: 60px 0px;
+  -webkit-box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  -webkit-transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-shop .item:hover, .section-shop .item:focus {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+  -webkit-transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-shop .link {
+  overflow: hidden;
 }
 
 /* category page */
-.wrapper {
+.category .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -689,7 +714,7 @@ footer .title {
           align-items: center;
 }
 
-.card {
+.category .card {
   width: 300px;
   height: 380px;
   position: relative;
@@ -697,18 +722,18 @@ footer .title {
           perspective: 1000px;
 }
 
-.card:hover .front {
+.category .card:hover .front {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.card:hover .back {
+.category .card:hover .back {
   -webkit-transform: rotateY(360deg);
           transform: rotateY(360deg);
 }
 
-.front,
-.back {
+.category .front,
+.category .back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -729,12 +754,12 @@ footer .title {
           backface-visibility: hidden;
 }
 
-.back {
+.category .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.img-card {
+.category .img-card {
   max-width: 100%;
   min-width: 100%;
   height: auto;
@@ -840,72 +865,5 @@ footer .title {
 .contacts {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(248, 248, 248, 0.5))), url("../img/hero/objects-6.jpg");
   background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(248, 248, 248, 0.5)), url("../img/hero/objects-6.jpg");
-}
-
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.card {
-  width: 300px;
-  height: 380px;
-  position: relative;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
-
-.card:hover .front {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.card:hover .back {
-  -webkit-transform: rotateY(360deg);
-          transform: rotateY(360deg);
-}
-
-.front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.img-card {
-  max-width: 100%;
-  min-width: 100%;
-  height: auto;
-}
-
-.checked {
-  color: orange;
 }
 /*# sourceMappingURL=main.css.map */
