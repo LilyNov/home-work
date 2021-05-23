@@ -1,15 +1,13 @@
-.header-overlay {
-  &.shop {
-    background-image: linear-gradient(
-        to right,
-        rgba(248, 248, 248, 0.5),
-        rgba(248, 248, 248, 0.5)
-      ),
-      url('../img/hero/objects-6.jpg');
-  }
+.shop {
+  background-image: linear-gradient(
+      to right,
+      rgba(248, 248, 248, 0.5),
+      rgba(248, 248, 248, 0.5)
+    ),
+    url('../img/hero/objects-6.jpg');
 }
 
-.shop {
+.section-shop {
   .shop-img {
     width: 250px;
   }
