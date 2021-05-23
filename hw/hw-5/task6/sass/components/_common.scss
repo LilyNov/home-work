@@ -51,6 +51,7 @@ section {
 
 .title {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .text {
@@ -72,6 +73,13 @@ section {
   }
 }
 
+.header-block {
+  display: inline-block;
+  padding: 10px;
+  background-color: $primary-bg-color;
+  @extend %border-radius;
+}
+
 /* navigation */
 .header-overlay {
   margin-left: auto;
@@ -87,6 +95,10 @@ section {
       rgba(248, 248, 248, 0.5)
     ),
     url('../img/hero/objects-2.jpg');
+
+  .link:hover {
+    color: $white-text-color;
+  }
 
   .flex-container {
     @include flex-mix(flex, center, space-between);
@@ -110,13 +122,6 @@ section {
     fill: currentColor;
   }
 
-  .header-block {
-    display: inline-block;
-    padding: 10px;
-    background-color: $primary-bg-color;
-    @extend %border-radius;
-  }
-
   .title {
     font-weight: 700;
     font-size: 22px;
@@ -138,9 +143,6 @@ section {
       font-size: 24px;
       margin: 0;
     }
-  }
-
-  @media screen and (min-width: 1200px) {
   }
 }
 
