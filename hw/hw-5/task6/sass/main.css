@@ -351,8 +351,8 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(248, 248, 248, 0.5))), url("../img/hero/objects-2.jpg");
-  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(248, 248, 248, 0.5)), url("../img/hero/objects-2.jpg");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(180, 169, 169, 0.5))), url("../img/hero/objects-2.jpg");
+  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-2.jpg");
 }
 
 .header-overlay .link:hover {
@@ -654,8 +654,13 @@ footer .title {
 }
 
 .shop {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(248, 248, 248, 0.5))), url("../img/hero/objects-6.jpg");
-  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(248, 248, 248, 0.5)), url("../img/hero/objects-6.jpg");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(180, 169, 169, 0.5))), url("../img/hero/objects-6.jpg");
+  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-6.jpg");
+}
+
+header.card {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(180, 169, 169, 0.5))), url("../img/hero/objects-3.jpg");
+  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-3.jpg");
 }
 
 .section-shop .title {
@@ -766,8 +771,55 @@ footer .title {
 }
 
 /* card page */
-.checked {
+.shop-card .card-img {
+  width: 130%;
+  height: auto;
+  margin-right: 40px;
+}
+
+.shop-card img {
+  width: 100%;
+  height: auto;
+}
+
+.shop-card .checked {
   color: orange;
+}
+
+.shop-card .star-container {
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.shop-card .input-size {
+  margin-bottom: 40px;
+}
+
+.shop-card .input-size .item {
+  margin-bottom: 10px;
+}
+
+.shop-card .input-size .item:last-child {
+  margin-bottom: 0;
+}
+
+.shop-card .input-size input,
+.shop-card .input-size label {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .shop-card .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .form-page .row {

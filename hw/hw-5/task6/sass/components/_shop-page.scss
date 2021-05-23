@@ -2,9 +2,18 @@
   background-image: linear-gradient(
       to right,
       rgba(248, 248, 248, 0.5),
-      rgba(248, 248, 248, 0.5)
+      rgba(180, 169, 169, 0.5)
     ),
     url('../img/hero/objects-6.jpg');
+}
+
+header.card {
+  background-image: linear-gradient(
+      to right,
+      rgba(248, 248, 248, 0.5),
+      rgba(180, 169, 169, 0.5)
+    ),
+    url('../img/hero/objects-3.jpg');
 }
 
 .section-shop {
@@ -94,6 +103,47 @@
 
 /* card page */
 
-.checked {
-  color: orange;
+.shop-card {
+  .card-img {
+    width: 130%;
+    height: auto;
+    margin-right: 40px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .checked {
+    color: orange;
+  }
+
+  .star-container {
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
+
+  .input-size {
+    margin-bottom: 40px;
+    .item {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    input,
+    label {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .flex-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
 }

@@ -10,34 +10,36 @@
 </head>
 <body>
     <!-- navigation -->
-    <header class="header-overlay">
-        <a class="header-logo" href="../../task6.html">MUNOM</a>
-        <nav>
-            <ul class="list">
-                <li><a class="link" href="../../task6.html">home</a></li>
-                <li><a class="link" href="../../pages/shop/shop-page.html">shop</a></li>
-                <li><a class="link" href="../../pages/contacts/contacts.html">contacts</a></li>
-                <li>
-                    <a class="link" href="../bascket/basket.html"><img class="busket-icon"
-                            src="../../img/hero/basket-icon.svg" alt="basket-icon"></a>
-                </li>
-            </ul>
-        </nav>
+    <header class="header-overlay card">
+        <div class="flex-container">
+            <a class="link logo" href="../../task6.html">MUNOM</a>
+            <nav class="navigation">
+                <ul class="list">
+                    <li class="item"><a class="link" href="../../task6.html">home</a></li>
+                    <li class="item"><a class="link" href="../../pages/shop/shop-page.html">shop</a></li>
+                    <li class="item"><a class="link" href="../../pages/contacts/contacts.html">contacts</a></li>
+                    <li class="item">
+                        <a class="link" href="../bascket/basket.html"><img class="busket-icon" src="../../img/hero/basket-icon.svg"
+                                alt="basket-icon"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <div class="header-block">
             <h2 class="block-title">Sweatshirt</h2>
         </div>
     </header>
     <main>
-        <section>
+        <section class="shop-card">
             <div class="container">
                 <div class="flex-container">
                     <div class="card-img">
                         <img src="../../img/sweatshirts/sweatshirt-w-1.jpg" alt="sweatshirt">
                     </div>
                     <div class="description">
-                        <h3>Men's Essential Tee</h3>
-                        <p><b>$48</b></p>
-                        <p>
+                        <h3 class="title">Men's Essential Tee</h3>
+                        <p class="text"><b>$48</b></p>
+                        <p class="text">
                             Each Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are
                             then enzyme washed
                             for added softness and garment dyed to our own custom colors. The garment dye process creates subtle
@@ -46,31 +48,41 @@
                             one as day one
                             hundred.
                         </p>
-                        <div>
+                        <div class="star-container">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>
                         </div>
-                        <div class="input-size">
-                            <label>
-                                <input type="radio" name="size">
-                                S
-                            </label>
-                            <label>
-                                <input type="radio" name="size">
-                                M
-                            </label>
-                            <label>
-                                <input type="radio" name="size">
-                                L
-                            </label>
-                            <label>
-                                <input type="radio" name="size">
-                                XL
-                            </label>
-                        </div>
+
+                        <ul class="list input-size">
+                            <li class="item">
+                                <label>
+                                    <input type="radio" name="size">
+                                    S
+                                </label>
+                            </li>
+                            <li class="item">
+                                <label>
+                                    <input type="radio" name="size">
+                                    M
+                                </label>
+                            </li>
+                            <li class="item">
+                                <label>
+                                    <input type="radio" name="size">
+                                    L
+                                </label>
+                            </li>
+                            <li class="item">
+                                <label>
+                                    <input type="radio" name="size">
+                                    XL
+                                </label>
+                            </li>
+                        </ul>
+                        
                         <a class="link button" href="../bascket/basket.html">Add to bascket</a>
                     </div>
                 </div>
@@ -80,43 +92,45 @@
     
     <!-- footer -->
     <footer>
-        <a class="footer-logo" href="../../task6.html">MUNOM</a>
-        <address>
-            <h5>Contact us</h5>
-            <p>Sagrada Familia, Herba Street Front USA brandoxide@gmail.com 002-568423591</p>
-        </address>
-        <div class="footer" id="social-link">
-            <h5>Follow us</h5>
-            <ul class="list">
-                <li class="item">
-                    <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-twitter"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-linkedin"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+        <a class="link logo" href="./task6.html">MUNOM</a>
+        <div class="flex-container">
+            <address>
+                <h3 class="title">Contact us</h3>
+                <p>Sagrada Familia, <br> Herba Street Front USA <br> brandoxide@gmail.com <br> 002-568423591</p>
+            </address>
+            <div class="footer" id="social-link">
+                <h3 class="title">Follow us</h3>
+                <ul class="list">
+                    <li class="item">
+                        <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <p>&copy; 2021 MUNOM</p>
     </footer>
