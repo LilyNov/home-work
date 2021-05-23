@@ -1,7 +1,9 @@
+@import './base/normalize';
 @import './utils/variables';
 @import './utils/mixins';
 @import './utils/placeholders';
 @import './components/common';
-@import './components/hero';
-@import './components/shop';
-@import './components/sweatshirts';
+@import './components/shop-page';
+@import './components/form-page';
+@import './components/sweatshirts-page';
+@import './components/sweatshirts-card';
