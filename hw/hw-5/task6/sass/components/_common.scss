@@ -22,8 +22,7 @@
   }
 
   .flex-container {
-    @include flex-mix(flex, center, space-between);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .list {
@@ -56,6 +55,21 @@
 
   .about {
     text-align: center;
+  }
+
+  @media screen and (min-width: 280px) {
+    .logo {
+      margin-bottom: 0;
+    }
+
+    .input {
+      margin-bottom: 0;
+    }
+
+    .flex-container {
+      @include flex-mix(flex, center, space-between);
+      margin-bottom: 40px;
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -114,10 +128,6 @@
 .subscribe {
   background-color: $white-text-color;
   text-align: center;
-
-  .button {
-    border: 0 transparent;
-  }
 }
 
 /* process */
@@ -145,14 +155,10 @@
   }
 
   .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     margin: -15px;
   }
 
   .item {
-    width: 45%;
     margin: 15px;
     padding: 30px;
     background-color: $customers-bg-color;
@@ -175,16 +181,33 @@
     width: 50px;
     height: 50px;
   }
+
+  @media screen and (min-width: 768px) {
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    .item {
+      width: 45%;
+      margin: 15px;
+      padding: 30px;
+      background-color: $customers-bg-color;
+    }
+  }
 }
 
 /* footer */
 
 footer {
-  padding: 40px;
+  padding: 20px;
   background-color: $footer-bg-color;
 
   .logo {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    margin-right: 0;
+    align-self: flex-start;
+    text-align: center;
   }
 
   address {
@@ -192,22 +215,48 @@ footer {
   }
 
   p {
-    text-align: center;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 2.14;
+    font-size: 12px;
+    line-height: 1.18;
     color: $white-text-color;
   }
 
   .flex-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-content: flex-start;
     margin-bottom: 40px;
+    div:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    & > div {
+      margin-bottom: 20px;
+    }
   }
 
   .title {
-    text-align: center;
+    text-align: left;
+  }
+
+  .button {
+    text-transform: none;
+  }
+  @media screen and (min-width: 370px) {
+    .flex-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-content: flex-start;
+      div {
+        width: 33%;
+      }
+      & > div {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .flex-container div:nth-child(even) {
+      display: none;
+    }
   }
 }
 
@@ -217,10 +266,9 @@ footer {
   .list {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
-  .item {
+  .item:not(:last-child) {
     margin: 0;
     margin-right: 10px;
   }
@@ -229,8 +277,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 35px;
+    height: 35px;
     color: 536643;
     background-color: $white-text-color;
     color: $black-text-color;
@@ -246,8 +294,8 @@ footer {
       transform: scale3d(1.1, 1.1, 1.1);
     }
   }
-}
 
-.social-icon {
-  fill: currentColor;
+  .social-icon {
+    fill: currentColor;
+  }
 }
