@@ -11,24 +11,26 @@
 <body>
     <!-- navigation -->
     <header class="header-overlay">
-        <a class="header-logo" href="../../task6.html">MUNOM</a>
-        <nav>
-            <ul class="list">
-                <li><a class="link" href="../../task6.html">home</a></li>
-                <li><a class="link" href="../../shop/shop-page.html">shop</a></li>
-                <li><a class="link" href="../../pages/contacts/contacts.html">contacts</a></li>
-                <li>
-                    <a class="link" href=""><img class="busket-icon" src="../../img/hero/basket-icon.svg"
-                            alt="basket-icon"></a>
-                </li>
-            </ul>
-        </nav>
+        <div class="flex-container">
+            <a class="link logo" href="../../task6.html">MUNOM</a>
+            <nav class="navigation">
+                <ul class="list">
+                    <li class="item"><a class="link" href="../../task6.html">home</a></li>
+                    <li class="item"><a class="link" href="../../shop/shop-page.html">shop</a></li>
+                    <li class="item"><a class="link" href="../../pages/contacts/contacts.html">contacts</a></li>
+                    <li class="item">
+                        <a class="link" href=""><img class="busket-icon" src="../../img/hero/basket-icon.svg" alt="basket-icon"></a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
         <div class="header-block">
             <h1 class="block-title">Payment</h1>
         </div>
     </header>
     <main>
-        <section>
+        <section class="form-page">
             <div class="row">
                 <div class="col-75">
                     <div class="container">
@@ -103,6 +105,7 @@
                                 <b>2</b>
                             </span>
                         </h4>
+                        <br>
                         <p>Men's Tee<span class="price">$48</span></p>
                         <p>Men's shoes <span class="price">$100</span></p>
                         <hr>
@@ -113,44 +116,46 @@
         </section>
     </main>
     <!-- footer -->
-    <footer class="contacts">
-        <a class="footer-logo" href="../../task6.html">MUNOM</a>
-        <address>
-            <h5>Contact us</h5>
-            <p>Sagrada Familia, Herba Street Front USA brandoxide@gmail.com 002-568423591</p>
-        </address>
-        <div class="footer" id="social-link">
-            <h5>Follow us</h5>
-            <ul class="list">
-                <li class="item">
-                    <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-twitter"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-linkedin"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+    <footer>
+        <a class="link logo" href="./task6.html">MUNOM</a>
+        <div class="flex-container">
+            <address>
+                <h3 class="title">Contact us</h3>
+                <p>Sagrada Familia, <br> Herba Street Front USA <br> brandoxide@gmail.com <br> 002-568423591</p>
+            </address>
+            <div class="footer" id="social-link">
+                <h3 class="title">Follow us</h3>
+                <ul class="list">
+                    <li class="item">
+                        <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <p>&copy; 2021 MUNOM</p>
     </footer>
