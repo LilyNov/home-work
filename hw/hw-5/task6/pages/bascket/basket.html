@@ -9,84 +9,98 @@
 </head>
 <body>
     <!-- navigation -->
-    <header class="header-overlay">
-        <a class="header-logo" href="../../task6.html">MUNOM</a>
-        <nav>
-            <ul class="list">
-                <li><a class="link" href="../../task6.html">home</a></li>
-                <li><a class="link" href="../shop/shop-page.html">shop</a></li>
-                <li><a class="link" href="../contacts/contacts.html">contacts</a></li>
-            </ul>
-        </nav>
+    <header class="header-overlay basket">
+        <div class="flex-container">
+            <a class="link logo" href="../../task6.html">MUNOM</a>
+            <nav class="navigation">
+                <ul class="list">
+                    <li class="item"><a class="link" href="../../task6.html">home</a></li>
+                    <li class="item"><a class="link" href="../../pages/shop/shop-page.html">shop</a></li>
+                    <li class="item"><a class="link" href="../../pages/contacts/contacts.html">contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-block">
+            <h2 class="block-title">Bascket</h2>
+        </div>
     </header>
     <main>
-        <section>
+        <section class="section-basket">
             <div class="container">
-                <div>
+                <div class="flex-container">
                     <img src="../../img/sweatshirts/sweatshirt-w-1.jpg" alt="sweatshirt">
-                    <h3>Men's Essential Tee (Starter Kit - 3-Pack)</h3>
-                    <p>XL</p>
+                    <div class="desc">
+                        <h3 class="title">Men's Tee</h3>
+                        <p class="text">XL</p>
+                        <p class="text lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae doloremque vitae fugit praesentium ad? Sapiente iste reprehenderit obcaecati corrupti? Quia ipsum, labore sint voluptatum vel pariatur animi sit sed recusandae.</p>
+                        <div class="flex-container-two">
+                            <input class="input" type="number" value="1">
+                            <p class="text" style="padding: 10px">$ 89</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="number" value="1">
-                    <p>$ 89</p>
-                </div>
-                <div>
+                <div class="flex-container">
                     <img src="../../img/shoes/shoes-1.jpg" alt="shoes">
-                    <h3>Men's shoes</h3>
-                    <p>48s</p>
+                    <div class="desc">
+                        <h3 class="title">Men's shoes</h3>
+                        <p class="text">48s</p>
+                        <p class="text lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste culpa harum soluta voluptatem possimus dolore est! Hic dicta iusto velit voluptate, facilis sed ipsum, quidem omnis esse earum ad quod.</p>
+                        <div class="flex-container-two">
+                            <input class="input" type="number" value="1">
+                            <p class="text" style="padding: 10px">$ 100</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="number" value="1">
-                    <p>$ 100</p>
+                <!-- total -->
+                <div class="total-container">
+                    <h2 class="title"><b>Total</b></h2>
+                    <p class="text"><b>$ 189</b></p>
                 </div>
-                <div>
-                    <h4>Total</h4>
-                    <p>$ 189</p>
-                    <a class="link button" href="../form/form-page.html">Go to payment</a>
-                </div>
+                <a class="link button" href="../form/form-page.html">Go to payment</a>
             </div>
         </section>
     </main>
     <!-- footer -->
     <footer>
-        <a class="footer-logo" href="../../task6.html">MUNOM</a>
-        <address>
-            <h5>Contact us</h5>
-            <p>Sagrada Familia, Herba Street Front USA brandoxide@gmail.com 002-568423591</p>
-        </address>
-        <div class="footer" id="social-link">
-            <h5>Follow us</h5>
-            <ul class="list">
-                <li class="item">
-                    <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-twitter"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
-                        <svg class="social-icon" width="20" height="20">
-                            <use href="../../img/sprite.svg#icon-linkedin"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+        <a class="link logo" href="./task6.html">MUNOM</a>
+        <div class="flex-container">
+            <address>
+                <h3 class="title">Contact us</h3>
+                <p>Sagrada Familia, <br> Herba Street Front USA <br> brandoxide@gmail.com <br> 002-568423591</p>
+            </address>
+            <div class="footer" id="social-link">
+                <h3 class="title">Follow us</h3>
+                <ul class="list">
+                    <li class="item">
+                        <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
+                            <svg class="social-icon" width="20" height="20">
+                                <use href="../../img/sprite.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <p>&copy; 2021 MUNOM</p>
     </footer>

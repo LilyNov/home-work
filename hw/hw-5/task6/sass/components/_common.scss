@@ -58,6 +58,15 @@ section {
   margin-bottom: 20px;
 }
 
+.input {
+  height: 36px;
+  padding: 4px 8px;
+  @extend %border-radius;
+  border: 1px solid rgba(129, 128, 128, 0.3);
+  box-shadow: 0px 13px 16px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
 .button {
   padding: 10px;
   font-size: 16px;
@@ -75,9 +84,15 @@ section {
 
 .header-block {
   display: inline-block;
-  padding: 10px;
+  padding: 6px;
+  font-size: 14px;
   background-color: $primary-bg-color;
   @extend %border-radius;
+
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+    font-size: 16px;
+  }
 }
 
 /* navigation */
@@ -96,8 +111,11 @@ section {
     ),
     url('../img/hero/objects-2.jpg');
 
-  .link:hover {
-    color: $white-text-color;
+  .link {
+    font-size: 14px;
+    &:hover {
+      color: $white-text-color;
+    }
   }
 
   .flex-container {
@@ -142,6 +160,9 @@ section {
       font-weight: 900;
       font-size: 24px;
       margin: 0;
+    }
+    .link {
+      font-size: 16px;
     }
   }
 }
@@ -193,15 +214,6 @@ section {
 
   .button {
     border: 0 transparent;
-  }
-
-  .subscribe-input {
-    height: 36px;
-    padding: 4px 8px;
-    @extend %border-radius;
-    border: 1px solid rgba(129, 128, 128, 0.3);
-    box-shadow: 0px 13px 16px rgba(0, 0, 0, 0.1);
-    outline: none;
   }
 }
 
