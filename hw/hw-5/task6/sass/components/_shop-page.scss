@@ -51,6 +51,10 @@
     justify-content: center;
     align-items: center;
     background-color: $primary-bg-color;
+    border: 1px solid #b0855b;
+    padding: 30px;
+    border-radius: 60px 0px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
   }
 
   .category-card {

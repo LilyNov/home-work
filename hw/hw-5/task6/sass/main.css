@@ -660,6 +660,11 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   background-color: #f5f0f0;
+  border: 1px solid #b0855b;
+  padding: 30px;
+  border-radius: 60px 0px;
+  -webkit-box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
 }
 
 .shop-category .category-card {
