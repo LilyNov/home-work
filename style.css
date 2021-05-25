@@ -141,7 +141,7 @@ header .logo {
   align-items: inherit;
 }
 
-#tasks .list {
+.home-work .list {
   padding: 40px 30px;
   border: 1px solid #dddddd;
   border-radius: 10px;
@@ -177,11 +177,11 @@ header .logo {
 }
 
 @media screen and (max-width: 768px) {
-  #tasks .item {
+  .item {
     font-size: 12px;
     text-transform: capitalize;
   }
-  #tasks .list {
+  .home-work .list {
     width: 30%;
   }
 }
@@ -247,9 +247,9 @@ header .logo {
 }
 
 @media screen and (max-width: 780px) {
-  /* .home-work .list {
+  .home-work .list {
     width: 50%;
-  } */
+  }
 
   .container.home-work {
     margin-left: auto;
@@ -272,7 +272,7 @@ header .logo {
   }
 
   .home-work .list {
-    /* width: 40%; */
+    width: 40%;
     padding: 20px 20px;
   }
 }
