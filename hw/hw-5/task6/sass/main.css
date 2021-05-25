@@ -605,11 +605,6 @@ footer {
   background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-6.jpg");
 }
 
-.cards {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(180, 169, 169, 0.5))), url("../img/hero/objects-3.jpg");
-  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-3.jpg");
-}
-
 .section-shop .title {
   text-transform: uppercase;
 }
@@ -653,8 +648,8 @@ footer {
   overflow: hidden;
 }
 
-/* category page */
-.category .wrapper {
+/* shop's category page */
+.shop-category .category-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -664,24 +659,10 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #f5f0f0;
 }
 
-.category .list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: -15;
-}
-
-.category .item {
-  margin: 15px;
-}
-
-.category .card {
+.shop-category .category-card {
   width: 300px;
   height: 380px;
   position: relative;
@@ -689,18 +670,18 @@ footer {
           perspective: 1000px;
 }
 
-.category .card:hover .front {
+.shop-category .category-card:hover .category-front {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.category .card:hover .back {
+.shop-category .category-card:hover .category-back {
   -webkit-transform: rotateY(360deg);
           transform: rotateY(360deg);
 }
 
-.category .front,
-.category .back {
+.shop-category .category-front,
+.shop-category .category-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -721,18 +702,22 @@ footer {
           backface-visibility: hidden;
 }
 
-.category .back {
+.shop-category .category-back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.category .img-card {
-  max-width: 100%;
-  min-width: 100%;
+.shop-category .category-img-card {
+  width: 100%;
   height: auto;
 }
 
-/* card page */
+/* one card page */
+.cards {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(248, 248, 248, 0.5)), to(rgba(180, 169, 169, 0.5))), url("../img/hero/objects-3.jpg");
+  background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-3.jpg");
+}
+
 .shop-card img {
   width: 100%;
   height: auto;
