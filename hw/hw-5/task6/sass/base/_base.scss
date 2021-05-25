@@ -21,13 +21,15 @@ section {
 }
 
 .logo {
-  margin-right: 8px;
-  margin-bottom: 15px;
-  padding: 7px;
-  border: 1px solid black;
+  padding: 3px 6px;
+  border: 1px solid $white-text-color;
   @extend %border-radius;
   font-weight: 700;
-  font-size: 20px;
+}
+
+.busket-icon {
+  width: 25px;
+  height: 25px;
 }
 
 .container {

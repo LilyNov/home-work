@@ -282,12 +282,14 @@ section {
 }
 
 .logo {
-  margin-right: 8px;
-  margin-bottom: 15px;
-  padding: 7px;
-  border: 1px solid black;
+  padding: 3px 6px;
+  border: 1px solid #ffffff;
   font-weight: 700;
-  font-size: 20px;
+}
+
+.busket-icon {
+  width: 25px;
+  height: 25px;
 }
 
 .container {
@@ -362,11 +364,11 @@ section {
   }
 }
 
-/* navigation */
+/* header */
 .header-overlay {
   margin-left: auto;
   margin-right: auto;
-  padding: 30px 30px 40px 30px;
+  padding: 100px 30px 40px 30px;
   background-color: #f5f0f0;
   background-repeat: no-repeat;
   background-position: center;
@@ -404,12 +406,6 @@ section {
 
 .header-overlay .item:not(:last-child) {
   margin-right: 10px;
-}
-
-.header-overlay .busket-icon {
-  width: 25px;
-  height: 25px;
-  fill: currentColor;
 }
 
 .header-overlay .title {
@@ -518,16 +514,12 @@ section {
   text-align: center;
 }
 
-.process .flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.process .text {
+  margin-right: 30px;
+}
+
+.process .text:last-child {
+  margin-bottom: 0;
 }
 
 .process .card-stack {
@@ -545,6 +537,7 @@ section {
 }
 
 .customers .item {
+  text-align: center;
   margin: 15px;
   padding: 30px;
   background-color: rgba(238, 186, 99, 0.5);
@@ -595,72 +588,7 @@ section {
 
 /* footer */
 footer {
-  padding: 20px;
   background-color: rgba(51, 51, 51, 0.5);
-}
-
-footer .logo {
-  margin-bottom: 15px;
-  margin-right: 0;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  text-align: center;
-}
-
-footer address {
-  font-style: normal;
-}
-
-footer p {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.18;
-  color: #ffffff;
-}
-
-footer .flex-container {
-  margin-bottom: 40px;
-}
-
-footer .flex-container div:not(:last-child) {
-  margin-right: 15px;
-}
-
-footer .flex-container > div {
-  margin-bottom: 20px;
-}
-
-footer .title {
-  text-align: left;
-}
-
-footer .button {
-  text-transform: none;
-}
-
-@media screen and (min-width: 370px) {
-  footer .flex-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
-  }
-  footer .flex-container div {
-    width: 33%;
-  }
-  footer .flex-container > div {
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  footer .flex-container div:nth-child(even) {
-    display: none;
-  }
 }
 
 .footer {
@@ -674,6 +602,9 @@ footer .button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer .item:not(:last-child) {
@@ -782,6 +713,21 @@ header.card {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.category .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: -15;
+}
+
+.category .item {
+  margin: 15px;
 }
 
 .category .card {

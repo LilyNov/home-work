@@ -141,8 +141,7 @@ header .logo {
   align-items: inherit;
 }
 
-.home-work .list {
-  width: 30%;
+#tasks .list {
   padding: 40px 30px;
   border: 1px solid #dddddd;
   border-radius: 10px;
@@ -175,6 +174,16 @@ header .logo {
 
 .item:not(:last-child) {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #tasks .item {
+    font-size: 12px;
+    text-transform: capitalize;
+  }
+  #tasks .list {
+    width: 30%;
+  }
 }
 
 /* page home-work */
@@ -238,9 +247,9 @@ header .logo {
 }
 
 @media screen and (max-width: 780px) {
-  .home-work .list {
+  /* .home-work .list {
     width: 50%;
-  }
+  } */
 
   .container.home-work {
     margin-left: auto;
@@ -257,13 +266,13 @@ header .logo {
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 781px) and (max-width: 1199px) {
   .container.home-work {
     flex-wrap: wrap;
   }
 
   .home-work .list {
-    width: 40%;
+    /* width: 40%; */
     padding: 20px 20px;
   }
 }
