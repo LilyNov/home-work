@@ -7,7 +7,7 @@
     url('../img/hero/objects-6.jpg');
 }
 
-header.card {
+.cards {
   background-image: linear-gradient(
       to right,
       rgba(248, 248, 248, 0.5),
@@ -114,15 +114,13 @@ header.card {
 /* card page */
 
 .shop-card {
-  .card-img {
-    width: 130%;
-    height: auto;
-    margin-right: 40px;
-  }
-
   img {
     width: 100%;
     height: auto;
+  }
+
+  .title {
+    margin-top: 20px;
   }
 
   .checked {
@@ -136,7 +134,10 @@ header.card {
 
   .input-size {
     margin-bottom: 40px;
+    display: flex;
+
     .item {
+      margin-right: 30px;
       margin-bottom: 10px;
       &:last-child {
         margin-bottom: 0;
@@ -150,10 +151,8 @@ header.card {
   }
 
   @media screen and (min-width: 768px) {
-    .flex-container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
+    .title {
+      margin-top: 0;
     }
   }
 }

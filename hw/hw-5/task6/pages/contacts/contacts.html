@@ -5,24 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../sass/main.css">
 </head>
 <body>
     <!-- navigation -->
     <header class="header-overlay contacts">
-        <div class="flex-container">
-            <a class="link logo" href="../../task6.html">MUNOM</a>
-            <nav class="navigation">
-                <ul class="list">
-                    <li class="item"><a class="link" href="../../task6.html">home</a></li>
-                    <li class="item"><a class="link" href="../shop/shop-page.html">shop</a></li>
-                    <li class="item">
-                        <a class="link" href="../bascket/basket.html"><img class="busket-icon" src="../../img/hero/basket-icon.svg"
-                                alt="basket-icon"></a>
+        <nav class="navbar fixed-top navbar-collapse navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand logo" href="task6.html">MUNOM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../task6.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../shop/shop-page.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../contacts/contacts.html">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../bascket/basket.html">
+                            <img class="busket-icon" src="../../img/hero/basket-icon.png" alt="basket-icon">
+                            <span class="badge badge-light">2</span>
+                        </a>
                     </li>
                 </ul>
-            </nav>
-        </div>
+            </div>
+        </nav>
         <div class="header-block">
             <h2 class="block-title">Contacts</h2>
         </div>
@@ -85,48 +100,74 @@
         </section>
     </main>
     <!-- footer -->
-    <footer>
-        <a class="link logo" href="./task6.html">MUNOM</a>
-        <div class="flex-container">
-            <address>
-                <h3 class="title">Contact us</h3>
-                <p>Sagrada Familia, <br> Herba Street Front USA <br> brandoxide@gmail.com <br> 002-568423591</p>
-            </address>
-            <div class="footer" id="social-link">
-                <h3 class="title">Follow us</h3>
-                <ul class="list">
-                    <li class="item">
-                        <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
-                            <svg class="social-icon" width="20" height="20">
-                                <use href="../../img/sprite.svg#icon-instagram"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
-                            <svg class="social-icon" width="20" height="20">
-                                <use href="../../img/sprite.svg#icon-twitter"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
-                            <svg class="social-icon" width="20" height="20">
-                                <use href="../../img/sprite.svg#icon-facebook"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
-                            <svg class="social-icon" width="20" height="20">
-                                <use href="../../img/sprite.svg#icon-linkedin"></use>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="card-body">
+                        <h5 class="card-title">MUNOM</h5>
+                        <p class="card-text text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem
+                            ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact us</h5>
+                        <p class="card-text text-white">Sagrada Familia, <br> Herba Street Front USA <br>
+                            brandoxide@gmail.com <br> 002-568423591</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Follow us</h5>
+                        <div class="card-text footer" id="social-link">
+                            <ul class="list">
+                                <li class="item">
+                                    <a href="https://instagram.com/" aria-label="Ссылка на instagram" class="link">
+                                        <svg class="social-icon" width="15" height="15">
+                                            <use href="../../img/sprite.svg#icon-instagram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="https://twitter.com/" aria-label="Ссылка на twitter" class="link twit">
+                                        <svg class="social-icon" width="15" height="15">
+                                            <use href="../../img/sprite.svg#icon-twitter"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="https://facebook.com/" aria-label="Ссылка на facebook" class="link face">
+                                        <svg class="social-icon" width="15" height="15">
+                                            <use href="../../img/sprite.svg#icon-facebook"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="https://linkedin.com/" aria-label="Ссылка на linkedin" class="link linkd">
+                                        <svg class="social-icon" width="15" height="15">
+                                            <use href="../../img/sprite.svg#icon-linkedin"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid text-muted text-center padding">
+                &copy; 2021 MUNOM
             </div>
         </div>
-        <p>&copy; 2021 MUNOM</p>
     </footer>
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
 </body>
 </html>

@@ -1,9 +1,8 @@
 /* header */
-
 .header-overlay {
   margin-left: auto;
   margin-right: auto;
-  padding: 100px 30px 40px 30px;
+  padding: 200px 30px 40px 30px;
   background-color: $primary-bg-color;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,27 +13,8 @@
       rgba(180, 169, 169, 0.5)
     ),
     url('../img/hero/objects-2.jpg');
-
-  .link {
-    font-size: 14px;
-    &:hover {
-      color: $white-text-color;
-    }
-  }
-
-  .flex-container {
-    margin-bottom: 30px;
-  }
-
-  .list {
-    @include flex-mix(flex, center, space-between);
-    font-weight: 700;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-
-  .item:not(:last-child) {
-    margin-right: 10px;
+  .about {
+    text-align: center;
   }
 
   .title {
@@ -46,36 +26,6 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.16;
-  }
-
-  .about {
-    text-align: center;
-  }
-
-  @media screen and (min-width: 280px) {
-    .logo {
-      margin-bottom: 0;
-    }
-
-    .input {
-      margin-bottom: 0;
-    }
-
-    .flex-container {
-      @include flex-mix(flex, center, space-between);
-      margin-bottom: 40px;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .logo {
-      font-weight: 900;
-      font-size: 24px;
-      margin: 0;
-    }
-    .link {
-      font-size: 16px;
-    }
   }
 }
 
@@ -204,6 +154,7 @@ footer {
 .footer {
   margin-bottom: 20px;
 
+  /* social-icon */
   .list {
     display: flex;
     align-items: center;
