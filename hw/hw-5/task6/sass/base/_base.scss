@@ -81,7 +81,8 @@ section {
   outline: none;
 }
 
-.button {
+.button,
+.button-cust {
   padding: 8px;
   font-size: 16px;
   text-transform: uppercase;
@@ -108,5 +109,16 @@ section {
   @media screen and (min-width: 768px) {
     padding: 10px;
     font-size: 16px;
+  }
+}
+
+.button-modal,
+.button-cust {
+  color: $white-text-color;
+  background-color: $hover-color;
+
+  &:hover {
+    background-color: $hover-color-form;
+    color: $white-text-color;
   }
 }

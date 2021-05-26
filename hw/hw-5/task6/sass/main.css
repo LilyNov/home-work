@@ -255,7 +255,8 @@ summary {
   display: list-item;
 }
 
-.logo, .input, .button, .header-block, .section-basket img {
+.logo, .input, .button,
+.button-cust, .header-block, .section-basket img {
   border-radius: 10px 0 10px 0;
 }
 
@@ -343,7 +344,8 @@ section {
   outline: none;
 }
 
-.button {
+.button,
+.button-cust {
   padding: 8px;
   font-size: 16px;
   text-transform: uppercase;
@@ -352,7 +354,9 @@ section {
   border: 0 transparent;
 }
 
-.button:hover, .button:focus {
+.button:hover, .button:focus,
+.button-cust:hover,
+.button-cust:focus {
   background-color: #45a049;
   cursor: pointer;
   -webkit-box-shadow: 0px 13px 16px rgba(0, 0, 0, 0.1);
@@ -377,10 +381,23 @@ section {
   }
 }
 
+.button-modal,
+.button-cust {
+  color: #ffffff;
+  background-color: #37806b;
+}
+
+.button-modal:hover,
+.button-cust:hover {
+  background-color: #45a049;
+  color: #ffffff;
+}
+
 /* header */
 .header-overlay {
   margin-left: auto;
   margin-right: auto;
+  font-size: 18px;
   padding: 200px 30px 40px 30px;
   background-color: #f5f0f0;
   background-repeat: no-repeat;
@@ -422,7 +439,7 @@ section {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: -15;
+  margin: -15px;
 }
 
 .popular .item {
