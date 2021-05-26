@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 18px;
-  padding: 200px 30px 40px 30px;
+  padding: 100px 30px 40px 30px;
   background-color: $primary-bg-color;
   background-repeat: no-repeat;
   background-position: center;
@@ -28,6 +28,10 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.16;
+  }
+
+  @media screen and (min-width: 780px) {
+    padding: 200px 30px 40px 30px;
   }
 }
 

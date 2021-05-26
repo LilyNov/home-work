@@ -398,7 +398,7 @@ section {
   margin-left: auto;
   margin-right: auto;
   font-size: 18px;
-  padding: 200px 30px 40px 30px;
+  padding: 100px 30px 40px 30px;
   background-color: #f5f0f0;
   background-repeat: no-repeat;
   background-position: center;
@@ -420,6 +420,12 @@ section {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.16;
+}
+
+@media screen and (min-width: 780px) {
+  .header-overlay {
+    padding: 200px 30px 40px 30px;
+  }
 }
 
 /* popular */
@@ -886,7 +892,11 @@ footer p {
   background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-6.jpg");
 }
 
-.carousel-cust {
+.section-contacts {
+  text-align: center;
+}
+
+.section-contacts .carousel-cust {
   width: 70%;
   margin-top: 50px;
   margin-left: auto;

@@ -7,9 +7,12 @@
     url('../img/hero/objects-6.jpg');
 }
 
-.carousel-cust {
-  width: 70%;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+.section-contacts {
+  text-align: center;
+  .carousel-cust {
+    width: 70%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
