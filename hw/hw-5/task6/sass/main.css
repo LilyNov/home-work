@@ -886,6 +886,13 @@ footer p {
   background-image: linear-gradient(to right, rgba(248, 248, 248, 0.5), rgba(180, 169, 169, 0.5)), url("../img/hero/objects-6.jpg");
 }
 
+.carousel-cust {
+  width: 70%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .basket {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(158, 158, 133, 0.5)), to(rgba(248, 248, 248, 0.5))), url("../img/hero/objects-4.jpg");
   background-image: linear-gradient(to right, rgba(158, 158, 133, 0.5), rgba(248, 248, 248, 0.5)), url("../img/hero/objects-4.jpg");
