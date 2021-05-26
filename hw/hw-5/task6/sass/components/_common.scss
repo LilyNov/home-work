@@ -38,12 +38,6 @@
     text-transform: uppercase;
   }
 
-  .shop-img {
-    display: block;
-    width: 250px;
-    height: auto;
-  }
-
   .list {
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +60,13 @@
   }
 
   .link {
-    overflow: hidden;
+    display: block;
+  }
+
+  .shop-img {
+    display: block;
+    width: 250px;
+    height: auto;
   }
 }
 
