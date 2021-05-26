@@ -450,6 +450,7 @@ section {
 
 .popular .item {
   margin: 15px;
+  width: 250px;
   border: 1px solid #b0855b;
   border-radius: 60px 0px;
   -webkit-box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
@@ -472,7 +473,7 @@ section {
 
 .popular .shop-img {
   display: block;
-  width: 250px;
+  width: 100%;
   height: auto;
 }
 
