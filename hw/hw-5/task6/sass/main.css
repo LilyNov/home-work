@@ -546,6 +546,10 @@ footer {
   background-color: rgba(51, 51, 51, 0.5);
 }
 
+footer p {
+  font-size: 12px;
+}
+
 .footer {
   margin-bottom: 20px;
   /* social-icon */
