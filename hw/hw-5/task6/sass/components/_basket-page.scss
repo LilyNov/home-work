@@ -10,12 +10,6 @@
 .section-basket {
   text-align: center;
 
-  .flex-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 40px;
-  }
-
   img {
     width: 150px;
     height: 150px;
@@ -48,12 +42,38 @@
     margin-bottom: 30px;
   }
 
-  @media screen and (min-width: 350px) {
+  @media screen and (max-width: 320px) {
+    .flex-container-two {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .title {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .button,
+    .text,
+    .input {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: 321px) {
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+
     .flex-container-two {
       display: flex;
       align-items: baseline;
       justify-content: flex-end;
     }
+
     .text.lorem {
       display: block;
     }
