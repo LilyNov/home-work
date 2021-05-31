@@ -1,16 +1,11 @@
-let q = 5;
-let w = 12;
-let e = 3;
-let total = 0;
+let x = 2;
+let y = 2;
+let z = 1;
 
-if ((q > w && q > e) || (q > w && q < e) || (q < w && q > e)) {
-  total += q;
+if (x == y) {
+  console.log(3);
+} else if (x == z) {
+  console.log(2);
+} else if (y == z) {
+  console.log(1);
 }
-if ((w > q && w > e) || (w > q && w < e) || (w < q && w > e)) {
-  total += w;
-}
-if ((e > q && e > w) || (e > q && e < w) || (e < q && e > w)) {
-  total += e;
-}
-
-console.log(total);
