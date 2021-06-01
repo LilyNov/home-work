@@ -272,24 +272,8 @@ if (n18 != null) {
 // let num1 = +prompt('Введите первое число'); //6
 // let num2 = +prompt('Введите второе число'); //10
 // let num3 = +prompt('Введите третье число'); //2
-let min;
-let max;
-
-num1 > num2 && num1 > num3
-  ? (max = num1)
-  : num2 > num1 && num2 > num3
-  ? (max = num2)
-  : num3 > num1 && num3 > num2
-  ? (max = num3)
-  : '';
-
-num1 < num2 && num1 < num3
-  ? (min = num1)
-  : num2 < num1 && num2 < num3
-  ? (min = num2)
-  : num3 < num1 && num3 < num2
-  ? (min = num3)
-  : '';
+let min = Math.min(num1, num2, num3);
+let max = Math.max(num1, num2, num3);
 
 console.log(max - min);
 
