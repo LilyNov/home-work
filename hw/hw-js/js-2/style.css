@@ -5,17 +5,24 @@ body {
   background-size: cover;
 }
 
-.item {
-  list-style-type: upper-alpha;
+.question {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.options {
+  margin: -15px;
 }
 
 .option-items {
   cursor: pointer;
+  margin: 15px;
+  padding: 20px;
 }
 
 .option-items.selected {
   color: rgb(12, 11, 11);
-  background-color: rgba(239, 243, 8, 0.5);
+  background-color: #eaee02;
 }
 
 .option-items:hover {
@@ -52,5 +59,9 @@ body {
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+}
+
+.btn {
+  color: white;
 }

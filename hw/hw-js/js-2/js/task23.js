@@ -44,7 +44,7 @@ const startGame = () => {
     return items
       .map(
         option =>
-          `<li class="item option-items" data-id="${indexId++}">
+          `<li class="option-items card col-5" data-id="${indexId++}">
                 ${option}
             </li>`,
       )
@@ -83,16 +83,18 @@ function randomQuestion() {
   } else {
     isCompletedAnswers();
   }
-  completedAnswers.push(indexOfQuestion);
+
+  let questionID = quizQuestions[indexOfQuestion].id;
+  completedAnswers.push(questionID);
 }
 
 function isCompletedAnswers() {
   let randomNum = Math.floor(Math.random() * quizQuestions.length);
-  let hitDublicate;
+  let hitDublicate = false;
 
   if (completedAnswers.length > 0) {
     completedAnswers.map(item => {
-      item == randomNum ? (hitDublicate = true) : (hitDublicate = false);
+      item === randomNum ? (hitDublicate = true) : (hitDublicate = false);
     });
 
     if (hitDublicate) {
