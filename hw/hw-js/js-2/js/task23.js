@@ -2,7 +2,7 @@ import quizQuestions from './quizQuestions.js';
 
 const refs = {
   optionsList: document.querySelector('.options'),
-  optionElements: document.querySelectorAll('.option'),
+  // optionElements: document.querySelectorAll('.option'),
   question: document.querySelector('.question'),
   numberOfquestion: document.querySelector('.number-of-question'),
   numberOfAllquestion: document.querySelector('.number-of-all-questions'),
@@ -30,9 +30,11 @@ refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 const unit = () => {
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
+  console.log(quizQuestions[indexOfQuestion]);
   refs.optionsList.innerHTML = list;
 
   function createList(items) {
+    console.log(items);
     return items
       .map(
         option =>
@@ -42,6 +44,7 @@ const unit = () => {
   }
 
   // следующая страница
+  indexId = 0;
   refs.numberOfquestion.innerHTML = indexOfPage + 1;
   indexOfPage += 1;
 };
