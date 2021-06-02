@@ -6,6 +6,11 @@
   color: #fff;
   background-color: rgb(38, 41, 44);
 }
+
+.option-items:hover {
+  color: #fff;
+  background-color: rgb(166, 176, 185);
+}
 .option-items.correct {
   color: #fff;
   background-color: green;

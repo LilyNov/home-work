@@ -18,6 +18,8 @@ const refs = {
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
 };
 
+console.log(refs.question);
+
 window.addEventListener('load', randomQuestion);
 refs.btnNext.addEventListener('click', isGoOn);
 refs.goOnNext.addEventListener('click', randomQuestion);
@@ -38,11 +40,9 @@ refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 const startGame = () => {
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
-  // console.log(quizQuestions[indexOfQuestion]);
   refs.optionsList.innerHTML = list;
 
   function createList(items) {
-    // console.log(items);
     return items
       .map(
         option =>
@@ -66,17 +66,15 @@ const startGame = () => {
 function checkAnswer(evt) {
   let id = evt.target.dataset.id;
   let answer = quizQuestions[indexOfQuestion].rightAnswer;
-  console.log(id);
-  console.log(answer);
-
   evt.target.classList.add('selected');
+
   if (+id === answer) {
     score += 1;
     money += 100;
   }
 }
 
-// вопросы рандомно (рефактор!!!)
+// вопросы рандомно
 let completedAnswers = [];
 
 function isGoOn() {
@@ -114,6 +112,7 @@ function isCompletedAnswers() {
     startGame();
   }
 }
+
 // закончить игру
 function quizOver() {
   document.querySelector('.quiz-over-modal').classList.add('show');
@@ -123,7 +122,6 @@ function quizOver() {
 }
 
 function closeModal() {
-  console.log('close');
   document.querySelector('.quiz-over-modal').classList.remove('show');
   document.querySelector('.task-over-modal').classList.remove('show');
 }
