@@ -18,8 +18,6 @@ const refs = {
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
 };
 
-console.log(refs.question);
-
 window.addEventListener('load', randomQuestion);
 refs.btnNext.addEventListener('click', isGoOn);
 refs.goOnNext.addEventListener('click', randomQuestion);
@@ -46,11 +44,8 @@ const startGame = () => {
     return items
       .map(
         option =>
-          `<li class="item">
-                <label class="option option-items" data-id="${indexId++}">
-                    <input type="radio" name="question">
-                    ${option}
-                </label>
+          `<li class="item option-items" data-id="${indexId++}">
+                ${option}
             </li>`,
       )
       .join('');

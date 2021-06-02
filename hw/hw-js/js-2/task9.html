@@ -19,25 +19,41 @@
     </style>
 </head>
 <body>
-
-    <a href="../index.html" class="link button">Назад</a>
-
-    <section class="quiz-container">
-        <div class="question-number">
-            <h3>
+<main>
+    
+    <section>
+        <div class="card">
+            <div class="card-header">
                 Вопрос
                 <span class="number-of-question"></span> из
                 <span class="number-of-all-questions"></span>
-            </h3>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title question"></h4>
+                <ol class="options">
+                    <!-- questions -->
+                </ol>
+                <a class="link button" data-value="btn-next">Дальше</a>
+            </div>
         </div>
-        <div class="question"></div>
-        <ul class="list options">
-            <!-- список вопросов -->
-        </ul>
-        <a class="link button" data-value="btn-next">Next</a>
-        <div data-value="answers-tracker"></div>
     </section>
 
+    <section class="tips container-fluid">
+        <ul class="list row">
+            <li class="item col-sm">
+                <a class="link button" href="">Звонок другу</a>
+            </li>
+            <li class="item col-sm">
+                <a class="link button" href="">50/50</a>
+            </li>
+            <li class="item col-sm">
+                <a class="link button" href="">Помощь зала</a>
+            </li>
+        </ul>
+    
+    </section>
+
+</main>
     <!-- Modal "are you sure?" -->
     <div class="task-over-modal">
         <div class="modal-content">
