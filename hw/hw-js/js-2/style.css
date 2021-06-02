@@ -4,7 +4,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.card {
+  opacity: 0.95;
+}
 .question {
   text-align: center;
   margin-bottom: 30px;

@@ -77,37 +77,29 @@ function isGoOn() {
 }
 
 function randomQuestion() {
-  document.querySelector('.task-over-modal').classList.remove('show');
+  let randomNum = Math.floor(Math.random() * quizQuestions.length);
+  let hitDublicate;
+
   if (indexOfPage == quizQuestions.length) {
     quizOver();
   } else {
-    isCompletedAnswers();
-  }
-
-  let questionID = quizQuestions[indexOfQuestion].id;
-  completedAnswers.push(questionID);
-}
-
-function isCompletedAnswers() {
-  let randomNum = Math.floor(Math.random() * quizQuestions.length);
-  let hitDublicate = false;
-
-  if (completedAnswers.length > 0) {
-    completedAnswers.map(item => {
-      item === randomNum ? (hitDublicate = true) : (hitDublicate = false);
-    });
-
-    if (hitDublicate) {
-      randomQuestion();
-    } else {
+    if (completedAnswers.length > 0) {
+      completedAnswers.map(item => {
+        item == randomNum ? (hitDublicate = true) : (hitDublicate = false);
+      });
+      if (hitDublicate) {
+        randomQuestion();
+      } else {
+        indexOfQuestion = randomNum;
+        unit();
+      }
+    }
+    if (completedAnswers == 0) {
       indexOfQuestion = randomNum;
-      startGame();
+      unit();
     }
   }
-  if (completedAnswers == 0) {
-    indexOfQuestion = randomNum;
-    startGame();
-  }
+  completedAnswers.push(indexOfQuestion);
 }
 
 // закончить игру
