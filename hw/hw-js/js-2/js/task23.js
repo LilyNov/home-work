@@ -2,43 +2,56 @@ import quizQuestions from './quizQuestions.js';
 
 const refs = {
   optionsList: document.querySelector('.options'),
-  // optionElements: document.querySelectorAll('.option'),
   question: document.querySelector('.question'),
   numberOfquestion: document.querySelector('.number-of-question'),
   numberOfAllquestion: document.querySelector('.number-of-all-questions'),
   btnNext: document.querySelector('[data-value="btn-next"]'),
+  goOnNext: document.querySelector('[data-value="btn-go-on"]'),
   answersTracker: document.querySelector('[data-value="answers-tracker"]'),
   correctAnswer: document.querySelector('[data-value="correct-answer"]'),
+  totalMoney: document.querySelector('[data-value="total-money"]'),
   numberOfAllquestion2: document.querySelector(
     '[data-value="number-of-all-questions-2"]',
   ),
+  btnCloseModal: document.querySelector('[data-value="close-modal"]'),
+  btnFinish: document.querySelector('[data-value="close-modal-finish"]'),
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
 };
 
 window.addEventListener('load', randomQuestion);
-refs.btnNext.addEventListener('click', randomQuestion);
+refs.btnNext.addEventListener('click', isGoOn);
+refs.goOnNext.addEventListener('click', randomQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
+refs.btnCloseModal.addEventListener('click', closeModal);
+refs.btnFinish.addEventListener('click', closeModal);
+refs.btnTryAgain.addEventListener('click', tryAgain);
 
 let indexId = 0;
 let indexOfQuestion;
 let indexOfPage = 0;
 let score = 0; //результат викторины
+let money = 0;
 
 refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 
 // блок с вопросами
-const unit = () => {
+const startGame = () => {
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
-  console.log(quizQuestions[indexOfQuestion]);
+  // console.log(quizQuestions[indexOfQuestion]);
   refs.optionsList.innerHTML = list;
 
   function createList(items) {
-    console.log(items);
+    // console.log(items);
     return items
       .map(
         option =>
-          `<li class="option option-items" data-id="${indexId++}">${option}</li>`,
+          `<li class="item">
+                <label class="option option-items" data-id="${indexId++}">
+                    <input type="radio" name="question">
+                    ${option}
+                </label>
+            </li>`,
       )
       .join('');
   }
@@ -53,48 +66,68 @@ const unit = () => {
 function checkAnswer(evt) {
   let id = evt.target.dataset.id;
   let answer = quizQuestions[indexOfQuestion].rightAnswer;
+  console.log(id);
+  console.log(answer);
+
+  evt.target.classList.add('selected');
   if (+id === answer) {
-    evt.target.classList.add('correct');
     score += 1;
-  } else {
-    evt.target.classList.add('wrong');
-  }
-  if (evt.target.nodeName !== 'LI') {
-    return;
+    money += 100;
   }
 }
 
-// вопросы рандомно
+// вопросы рандомно (рефактор!!!)
 let completedAnswers = [];
 
-function randomQuestion() {
-  let randomNum = Math.floor(Math.random() * quizQuestions.length);
-  let hitDublicate;
+function isGoOn() {
+  document.querySelector('.task-over-modal').classList.add('show');
+}
 
+function randomQuestion() {
+  document.querySelector('.task-over-modal').classList.remove('show');
   if (indexOfPage == quizQuestions.length) {
     quizOver();
   } else {
-    if (completedAnswers.length > 0) {
-      completedAnswers.map(item => {
-        item == randomNum ? (hitDublicate = true) : (hitDublicate = false);
-      });
-      if (hitDublicate) {
-        randomQuestion();
-      } else {
-        indexOfQuestion = randomNum;
-        unit();
-      }
-    }
-    if (completedAnswers == 0) {
-      indexOfQuestion = randomNum;
-      unit();
-    }
+    isCompletedAnswers();
   }
   completedAnswers.push(indexOfQuestion);
 }
 
+function isCompletedAnswers() {
+  let randomNum = Math.floor(Math.random() * quizQuestions.length);
+  let hitDublicate;
+
+  if (completedAnswers.length > 0) {
+    completedAnswers.map(item => {
+      item == randomNum ? (hitDublicate = true) : (hitDublicate = false);
+    });
+
+    if (hitDublicate) {
+      randomQuestion();
+    } else {
+      indexOfQuestion = randomNum;
+      startGame();
+    }
+  }
+  if (completedAnswers == 0) {
+    indexOfQuestion = randomNum;
+    startGame();
+  }
+}
 // закончить игру
 function quizOver() {
-  console.log('over');
   document.querySelector('.quiz-over-modal').classList.add('show');
+  refs.correctAnswer.innerHTML = score;
+  refs.totalMoney.innerHTML = money;
+  refs.numberOfAllquestion2.innerHTML = quizQuestions.length;
+}
+
+function closeModal() {
+  console.log('close');
+  document.querySelector('.quiz-over-modal').classList.remove('show');
+  document.querySelector('.task-over-modal').classList.remove('show');
+}
+
+function tryAgain() {
+  window.location.reload();
 }
