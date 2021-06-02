@@ -1,0 +1,24 @@
+.options {
+  cursor: pointer;
+}
+.option-items.correct {
+  color: #fff;
+  background-color: green;
+}
+
+.option-items.wrong {
+  color: #fff;
+  background-color: red;
+}
+
+.option-items.disabled {
+  pointer-events: none;
+}
+
+.quiz-over-modal {
+  display: none;
+}
+
+.quiz-over-modal.show {
+  display: block;
+}

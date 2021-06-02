@@ -5,23 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <!-- Подключаем Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
 
     <style>
         body {
-        background-image: url('https://cdn.pixabay.com/photo/2019/09/17/18/48/computer-4484282_1280.jpg');
-        background-repeat: no-repeat;
-
-  background-size: cover;
         padding: 30px;
         }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="link button">Назад</a>
-    <H1>JS</H1>
 
-    <!-- <script src="./script.js"></script> -->
-    <script src="j.js"></script>
+    <a href="../index.html" class="link button">Назад</a>
+    <div class="quiz-over-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Хороший результат!</h5>
+            </div>
+            <div class="modal-body">
+                <p>Ты ответил на
+                    <span data-value="correct-answer"></span> из
+                    <span data-value="number-of-all-questions-2"></span> вопроса
+                </p>
+                <p>Попробовать снова?</p>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-secondary" data-dismiss="modal">нет</a>
+                <a class="btn btn-primary button-modal" data-value="btn-try-again">да</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="quiz-container">
+        <div class="question-number">
+            <h3>
+                Вопрос
+                <span class="number-of-question"></span> из
+                <span class="number-of-all-questions"></span>
+            </h3>
+        </div>
+        <div class="question"></div>
+        <ul class="options">
+            <!-- список вопросов -->
+        </ul>
+        <div class="button">
+            <button data-value="btn-next">Next</button>
+        </div>
+        <div data-value="answers-tracker"></div>
+    </section>
+
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/task23.js" type='module'></script>
+<!-- Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<!-- Bootstrap -->
 </body>
 </html>
