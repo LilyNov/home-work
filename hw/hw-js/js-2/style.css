@@ -37,15 +37,22 @@ body {
   background-color: #c00303;
 }
 
-/* .option-items:hover {
+.option-items:hover {
   color: #fff;
-  background-color: rgb(166, 176, 185);
-} */
+  background-color: rgb(15, 109, 192);
+}
 
 .link.button {
   color: royalblue;
   background-color: #fff;
   border-color: royalblue;
+}
+
+.js-audience.disabled,
+.js-call.disabled {
+  pointer-events: none;
+  color: rgb(44, 42, 42);
+  background-color: rgb(128, 128, 128);
 }
 
 .task-over-modal,

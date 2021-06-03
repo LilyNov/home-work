@@ -7,7 +7,6 @@ const refs = {
   numberOfquestion: document.querySelector('.number-of-question'),
   numberOfAllquestion: document.querySelector('.number-of-all-questions'),
   btnNext: document.querySelector('[data-value="btn-next"]'),
-  goOnNext: document.querySelector('[data-value="btn-go-on"]'),
   answersTracker: document.querySelector('[data-value="answers-tracker"]'),
   correctAnswer: document.querySelector('[data-value="correct-answer"]'),
   totalMoney: document.querySelector('[data-value="total-money"]'),
@@ -17,15 +16,19 @@ const refs = {
   btnCloseModal: document.querySelector('[data-value="close-modal"]'),
   btnFinish: document.querySelector('[data-value="close-modal-finish"]'),
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
+  btnHelpFriend: document.querySelector('.js-call'),
+  btnAskAudience: document.querySelector('.js-audience'),
+  help: document.querySelector('[data-value="answer"]'),
 };
 
 window.addEventListener('load', randomQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
 refs.btnNext.addEventListener('click', validate);
-refs.goOnNext.addEventListener('click', randomQuestion);
 refs.btnCloseModal.addEventListener('click', closeModal);
 refs.btnFinish.addEventListener('click', closeModal);
 refs.btnTryAgain.addEventListener('click', tryAgain);
+refs.btnHelpFriend.addEventListener('click', callToFriend);
+refs.btnAskAudience.addEventListener('click', askAudience);
 
 let indexId = 0;
 let indexOfQuestion;
@@ -117,6 +120,49 @@ function validate() {
     randomQuestion();
     enableOptions();
   }
+}
+
+// блок подсказок
+function callToFriend() {
+  let randomNum = Math.floor(Math.random() * quizQuestions.length);
+  indexOfQuestion = completedAnswers[completedAnswers.length - 1];
+  refs.help.innerHTML = quizQuestions[indexOfQuestion].options[randomNum];
+
+  document.querySelector('.task-over-modal').classList.add('show');
+  refs.btnHelpFriend.classList.add('disabled');
+}
+
+function askAudience() {
+  let a = Math.floor(Math.random() * 100);
+  let b = Math.floor(Math.random() * 100);
+  let c = Math.floor(Math.random() * 100);
+  let d = Math.floor(Math.random() * 100);
+
+  const createList = (a,b,c,d) => {
+    return  (`
+    А ${a}%
+    <div class="progress">
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${a}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+В ${b}%
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${b}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+С ${c}%
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: ${c}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+D ${d}%
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: ${d}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+    `)
+
+  };
+  const list = createList(a, b, c, d);
+  refs.help.innerHTML = list
+  document.querySelector('.task-over-modal').classList.add('show');
+  refs.btnAskAudience.classList.add('disabled');
 }
 
 // закончить игру

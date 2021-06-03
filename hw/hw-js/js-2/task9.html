@@ -44,13 +44,13 @@
         </div>
         <ul class="list row justify-content-around">
             <li class="card col-3">
-                <a class="link button" href="">Звонок другу</a>
+                <button class="link button js-call" href="">Звонок другу</button>
             </li>
             <li class="card col-3">
                 <a class="link button" href="">50/50</a>
             </li>
             <li class="card col-3">
-                <a class="link button" href="">Помощь зала</a>
+                <button class="link button js-audience" href="">Помощь зала</button>
             </li>
         </ul>
     
@@ -61,11 +61,10 @@
     <div class="task-over-modal">
         <div class="modal-content">
             <div class="modal-body">
-                <p>Вы уверены?</p>
+                <p data-value="answer"></p>
             </div>
             <div class="modal-footer">
-                <a type="button" class="btn btn-secondary" data-value="close-modal">нет</a>
-                <a type="button" class="btn btn-warning" data-value="btn-go-on">да</a>
+                <a type="button" class="btn btn-secondary" data-value="close-modal">ok</a>
             </div>
         </div>
     </div>
