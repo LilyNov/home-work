@@ -2,6 +2,7 @@ import quizQuestions from './quizQuestions.js';
 
 const refs = {
   optionsList: document.querySelector('.options'),
+  optionElement: document.querySelector('.option'),
   question: document.querySelector('.question'),
   numberOfquestion: document.querySelector('.number-of-question'),
   numberOfAllquestion: document.querySelector('.number-of-all-questions'),
@@ -19,9 +20,9 @@ const refs = {
 };
 
 window.addEventListener('load', randomQuestion);
-refs.btnNext.addEventListener('click', isGoOn);
-refs.goOnNext.addEventListener('click', randomQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
+refs.btnNext.addEventListener('click', validate);
+refs.goOnNext.addEventListener('click', randomQuestion);
 refs.btnCloseModal.addEventListener('click', closeModal);
 refs.btnFinish.addEventListener('click', closeModal);
 refs.btnTryAgain.addEventListener('click', tryAgain);
@@ -39,12 +40,12 @@ const startGame = () => {
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
   refs.optionsList.innerHTML = list;
-
+  enableOptions();
   function createList(items) {
     return items
       .map(
         option =>
-          `<li class="option-items card col-5" data-id="${indexId++}">
+          `<li class="option option-items card col-5" data-id="${indexId++}">
                 ${option}
             </li>`,
       )
@@ -56,18 +57,6 @@ const startGame = () => {
   refs.numberOfquestion.innerHTML = indexOfPage + 1;
   indexOfPage += 1;
 };
-
-// выбор варианта ответа
-function checkAnswer(evt) {
-  let id = evt.target.dataset.id;
-  let answer = quizQuestions[indexOfQuestion].rightAnswer;
-  evt.target.classList.add('selected');
-
-  if (+id === answer) {
-    score += 1;
-    money += 100;
-  }
-}
 
 // вопросы рандомно
 let completedAnswers = [];
@@ -84,9 +73,8 @@ function randomQuestion() {
     quizOver();
   } else {
     if (completedAnswers.length > 0) {
-      completedAnswers.map(item => {
-        item == randomNum ? (hitDublicate = true) : (hitDublicate = false);
-      });
+      hitDublicate = completedAnswers.some(num => num == randomNum);
+      console.log(hitDublicate);
       if (hitDublicate) {
         randomQuestion();
       } else {
@@ -100,6 +88,35 @@ function randomQuestion() {
     }
   }
   completedAnswers.push(indexOfQuestion);
+}
+
+// выбор варианта ответа
+function checkAnswer(evt) {
+  if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
+    evt.target.classList.add('correct');
+    score += 1;
+    money += 100;
+  } else {
+    evt.target.classList.add('wrong');
+  }
+  disabledOptions();
+}
+
+const disabledOptions = () => {
+  refs.optionsList.classList.add('disabled');
+};
+
+function enableOptions() {
+  refs.optionsList.classList.remove('disabled', 'correct', 'wrong');
+}
+
+function validate() {
+  if (!refs.optionsList.classList.contains('disabled')) {
+    alert('Нужно выбрать один вариант ответа');
+  } else {
+    randomQuestion();
+    enableOptions();
+  }
 }
 
 // закончить игру

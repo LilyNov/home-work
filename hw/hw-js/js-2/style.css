@@ -7,6 +7,7 @@ body {
 .card {
   opacity: 0.95;
 }
+
 .question {
   text-align: center;
   margin-bottom: 30px;
@@ -16,21 +17,30 @@ body {
   margin: -15px;
 }
 
+.options.disabled {
+  pointer-events: none;
+}
+
 .option-items {
   cursor: pointer;
   margin: 15px;
   padding: 20px;
 }
 
-.option-items.selected {
+.option-items.correct {
   color: rgb(12, 11, 11);
-  background-color: #eaee02;
+  background-color: #13c003;
 }
 
-.option-items:hover {
+.option-items.wrong {
+  color: rgb(12, 11, 11);
+  background-color: #c00303;
+}
+
+/* .option-items:hover {
   color: #fff;
   background-color: rgb(166, 176, 185);
-}
+} */
 
 .link.button {
   color: royalblue;
