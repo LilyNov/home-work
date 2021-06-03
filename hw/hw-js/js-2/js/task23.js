@@ -91,12 +91,12 @@ function randomQuestion() {
         randomQuestion();
       } else {
         indexOfQuestion = randomNum;
-        unit();
+        startGame();
       }
     }
     if (completedAnswers == 0) {
       indexOfQuestion = randomNum;
-      unit();
+      startGame();
     }
   }
   completedAnswers.push(indexOfQuestion);
