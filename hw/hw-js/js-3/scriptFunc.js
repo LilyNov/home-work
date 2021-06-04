@@ -260,8 +260,8 @@ const min = (a,b) => a < b ? console.log('Меньшее число: ', a) : con
 // P.S. В этой задаче функция обязана поддерживать только натуральные значения n, т.е. 
 // целые от 1 и выше.
 
-let x = +prompt('Введите число');
-let n = +prompt('Введите степень (натуральное число)');
+// let x = +prompt('Введите число');
+// let n = +prompt('Введите степень (натуральное число)');
 const pow = (x,n) => {
     if(n/1 && n/n){
      alert(x**n)
@@ -318,7 +318,7 @@ const cycle = (n) => {
 
 const numbers = (sum,n) => {
     cycle(n);
-    
+
     isNegativeNumb = arr.some(num => num < 0);
     if(isNegativeNumb){
     return sum = arr.filter(num => num < 0).reduce((a,b) => a + b, 0);
