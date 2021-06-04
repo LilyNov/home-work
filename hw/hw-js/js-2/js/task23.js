@@ -2,7 +2,6 @@ import quizQuestions from './quizQuestions.js';
 
 const refs = {
   optionsList: document.querySelector('.options'),
-  optionElement: document.querySelector('.option'),
   question: document.querySelector('.question'),
   numberOfquestion: document.querySelector('.number-of-question'),
   numberOfAllquestion: document.querySelector('.number-of-all-questions'),
@@ -95,17 +94,34 @@ function randomQuestion() {
 
 // выбор варианта ответа
 function checkAnswer(evt) {
-  if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
-    evt.target.classList.add('correct');
+if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
+    evt.target.classList.add('value');
+    setTimeout(() => {
+      evt.target.classList.remove('value');
+      evt.target.classList.add('correct');
+    }, 2000);
+
     score += 1;
     money += 100;
+
   } else {
-    evt.target.classList.add('wrong');
+    evt.target.classList.add('value');
+    setTimeout(() => {
+    evt.target.classList.remove('value');
+    }, 2000);
   }
   disabledOptions();
 }
 
 const disabledOptions = () => {
+  let items = document.querySelectorAll('.option')
+  items.forEach(item=> {
+    if(item.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
+      setTimeout(() => {
+        item.classList.add('correct')
+      }, 2000);
+    }
+  })
   refs.optionsList.classList.add('disabled');
 };
 

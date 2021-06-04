@@ -30,6 +30,13 @@ body {
 .option-items.correct {
   color: rgb(12, 11, 11);
   background-color: #13c003;
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes correct {
+  50% {
+    opacity: 0;
+  }
 }
 
 .option-items.wrong {
@@ -37,7 +44,7 @@ body {
   background-color: #c00303;
 }
 
-.option-items:hover {
+.option-items.value {
   color: #fff;
   background-color: rgb(15, 109, 192);
 }
