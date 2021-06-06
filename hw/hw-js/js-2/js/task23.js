@@ -55,7 +55,7 @@ const startGame = () => {
     return items
       .map(
         option =>
-          `<li class="option option-items hexagon card col-5" data-id="${indexId++}">
+          `<li class="option option-items col-sm-12 col-md-6 col-lg-4 card" data-id="${indexId++}">
           <span>${option.slice(0,3)}</span> ${option.split(' ').splice(1,4).join(' ')}
             </li>`,
       )
