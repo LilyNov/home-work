@@ -5,7 +5,6 @@ const refs = {
   question: document.querySelector('.question'),
   numberOfquestion: document.querySelector('.number-of-question'),
   numberOfAllquestion: document.querySelector('.number-of-all-questions'),
-  btnNext: document.querySelector('[data-value="btn-next"]'),
   answersTracker: document.querySelector('[data-value="answers-tracker"]'),
   correctAnswer: document.querySelector('[data-value="correct-answer"]'),
   totalMoney: document.querySelector('[data-value="total-money"]'),
@@ -18,11 +17,12 @@ const refs = {
   btnHelpFriend: document.querySelector('.js-call'),
   btnAskAudience: document.querySelector('.js-audience'),
   help: document.querySelector('[data-value="answer"]'),
+  gameOverText: document.querySelector('[data-value="js-over-text"]'),
 };
+console.log(refs.gameOverText);
 
 window.addEventListener('load', randomQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
-refs.btnNext.addEventListener('click', validate);
 refs.btnCloseModal.addEventListener('click', closeModal);
 refs.btnFinish.addEventListener('click', closeModal);
 refs.btnTryAgain.addEventListener('click', tryAgain);
@@ -37,6 +37,14 @@ let money = 0;
 
 refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 
+
+// аудио
+function soundClick(src, play) {
+  const audio = new Audio();
+  audio.src = src;
+  audio.autoplay = play; 
+  }
+
 // блок с вопросами
 const startGame = () => {
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
@@ -47,8 +55,8 @@ const startGame = () => {
     return items
       .map(
         option =>
-          `<li class="option option-items card col-5" data-id="${indexId++}">
-                ${option}
+          `<li class="option option-items hexagon card col-5" data-id="${indexId++}">
+          <span>${option.slice(0,3)}</span> ${option.split(' ').splice(1,4).join(' ')}
             </li>`,
       )
       .join('');
@@ -57,15 +65,16 @@ const startGame = () => {
   // следующая страница
   indexId = 0;
   refs.numberOfquestion.innerHTML = indexOfPage + 1;
+  refs.totalMoney.innerHTML = money;
   indexOfPage += 1;
 };
 
 // вопросы рандомно
 let completedAnswers = [];
 
-function isGoOn() {
-  document.querySelector('.task-over-modal').classList.add('show');
-}
+// function isGoOn() {
+//   document.querySelector('.task-over-modal').classList.add('show');
+// }
 
 function randomQuestion() {
   let randomNum = Math.floor(Math.random() * quizQuestions.length);
@@ -76,7 +85,6 @@ function randomQuestion() {
   } else {
     if (completedAnswers.length > 0) {
       hitDublicate = completedAnswers.some(num => num == randomNum);
-      console.log(hitDublicate);
       if (hitDublicate) {
         randomQuestion();
       } else {
@@ -99,16 +107,27 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
     setTimeout(() => {
       evt.target.classList.remove('value');
       evt.target.classList.add('correct');
-    }, 2000);
+      soundClick('sourse/khsm_q1-5-correct-o.mp3', true)
+      setTimeout(() => {
+        randomQuestion();
+        enableOptions();
+      }, 500);
+    }, 300);
 
     score += 1;
-    money += 100;
+    money += 100000;
+    console.log(money);
 
   } else {
     evt.target.classList.add('value');
     setTimeout(() => {
     evt.target.classList.remove('value');
-    }, 2000);
+    evt.target.classList.add('wrong');
+    soundClick('sourse/khsm_q1-5-wrong.mp3', true);
+    setTimeout(() => {
+      quizOver();
+    }, 1000);
+    }, 500);
   }
   disabledOptions();
 }
@@ -119,7 +138,7 @@ const disabledOptions = () => {
     if(item.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
       setTimeout(() => {
         item.classList.add('correct')
-      }, 2000);
+      }, 500);
     }
   })
   refs.optionsList.classList.add('disabled');
@@ -129,20 +148,12 @@ function enableOptions() {
   refs.optionsList.classList.remove('disabled', 'correct', 'wrong');
 }
 
-function validate() {
-  if (!refs.optionsList.classList.contains('disabled')) {
-    alert('Нужно выбрать один вариант ответа');
-  } else {
-    randomQuestion();
-    enableOptions();
-  }
-}
-
 // блок подсказок
 function callToFriend() {
-  let randomNum = Math.floor(Math.random() * quizQuestions.length);
+  soundClick('sourse/khsm_phone_end.mp3', true)
+  let randomNum = Math.floor(Math.random() * 3);
   indexOfQuestion = completedAnswers[completedAnswers.length - 1];
-  refs.help.innerHTML = quizQuestions[indexOfQuestion].options[randomNum];
+  refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
 
   document.querySelector('.task-over-modal').classList.add('show');
   refs.btnHelpFriend.classList.add('disabled');
@@ -155,6 +166,7 @@ function askAudience() {
   let d = Math.floor(Math.random() * 100);
 
   const createList = (a,b,c,d) => {
+    soundClick('sourse/khsm_phone_end.mp3', true)
     return  (`
     А ${a}%
     <div class="progress">
@@ -183,10 +195,8 @@ D ${d}%
 
 // закончить игру
 function quizOver() {
-  document.querySelector('.quiz-over-modal').classList.add('show');
-  refs.correctAnswer.innerHTML = score;
-  refs.totalMoney.innerHTML = money;
-  refs.numberOfAllquestion2.innerHTML = quizQuestions.length;
+  soundClick('sourse/q6-2000-clock.mp3', true)
+ document.querySelector('.quiz-over-modal').classList.add('show');
 }
 
 function closeModal() {

@@ -4,13 +4,38 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.quiz {
+  margin-bottom: 50px;
+}
+
 .card {
+  display: block;
   opacity: 0.95;
+  margin: 15px;
+  padding: 15px;
+  background-color: rgb(8, 33, 97);
+  color: #fff;
+  border-radius: 10px ;
+  border: 1px solid yellow;
+  cursor: pointer;
+}
+
+.card:hover{
+  background-color: rgba(8, 33, 97, 0.8);
+}
+
+.tips .card {
+  min-width: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+  border: 3px solid white;
+  text-align: center;
 }
 
 .question {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 .options {
@@ -21,10 +46,8 @@ body {
   pointer-events: none;
 }
 
-.option-items {
-  cursor: pointer;
-  margin: 15px;
-  padding: 20px;
+.option-items > span {
+  color: yellow;
 }
 
 .option-items.correct {
@@ -33,15 +56,9 @@ body {
   animation: blinker 1s step-start infinite;
 }
 
-@keyframes correct {
-  50% {
-    opacity: 0;
-  }
-}
-
 .option-items.wrong {
   color: rgb(12, 11, 11);
-  background-color: #c00303;
+  background-color: #ec3333;
 }
 
 .option-items.value {
@@ -49,11 +66,6 @@ body {
   background-color: rgb(15, 109, 192);
 }
 
-.link.button {
-  color: royalblue;
-  background-color: #fff;
-  border-color: royalblue;
-}
 
 .js-audience.disabled,
 .js-call.disabled {
@@ -88,6 +100,3 @@ body {
   width: 50%;
 }
 
-.btn {
-  color: white;
-}
