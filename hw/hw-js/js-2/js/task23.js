@@ -15,11 +15,11 @@ const refs = {
   btnFinish: document.querySelector('[data-value="close-modal-finish"]'),
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
   btnHelpFriend: document.querySelector('.js-call'),
+  btnHelpFifty: document.querySelector('.js-fifty'),
   btnAskAudience: document.querySelector('.js-audience'),
   help: document.querySelector('[data-value="answer"]'),
   gameOverText: document.querySelector('[data-value="js-over-text"]'),
 };
-console.log(refs.gameOverText);
 
 window.addEventListener('load', randomQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
@@ -27,6 +27,7 @@ refs.btnCloseModal.addEventListener('click', closeModal);
 refs.btnFinish.addEventListener('click', closeModal);
 refs.btnTryAgain.addEventListener('click', tryAgain);
 refs.btnHelpFriend.addEventListener('click', callToFriend);
+refs.btnHelpFifty.addEventListener('click', helpFiftyFifty);
 refs.btnAskAudience.addEventListener('click', askAudience);
 
 let indexId = 0;
@@ -71,10 +72,6 @@ const startGame = () => {
 
 // вопросы рандомно
 let completedAnswers = [];
-
-// function isGoOn() {
-//   document.querySelector('.task-over-modal').classList.add('show');
-// }
 
 function randomQuestion() {
   let randomNum = Math.floor(Math.random() * quizQuestions.length);
@@ -148,15 +145,6 @@ function enableOptions() {
   refs.optionsList.classList.remove('disabled', 'correct', 'wrong');
 }
 
-// function validate() {
-//   if (!refs.optionsList.classList.contains('disabled')) {
-//     alert('Нужно выбрать один вариант ответа');
-//   } else {
-//     randomQuestion();
-//     enableOptions();
-//   }
-// }
-
 // блок подсказок
 function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
@@ -166,6 +154,24 @@ function callToFriend() {
 
   document.querySelector('.task-over-modal').classList.add('show');
   refs.btnHelpFriend.classList.add('disabled');
+}
+
+function helpFiftyFifty() {
+  let item = document.querySelectorAll('.option')
+  let answerId = quizQuestions[indexOfQuestion].rightAnswer;
+  let itemId = 0;
+  let itemId2 = 1;
+
+  if(itemId == answerId) {
+    itemId += 1;
+    if(itemId == itemId2) itemId += 1;
+  } else if (itemId2 == answerId) {
+    itemId2 +=1
+  }
+
+  item[itemId].classList.add('opacity');
+  item[itemId2].classList.add('opacity');
+  refs.btnHelpFifty.classList.add('disabled');
 }
 
 function askAudience() {
@@ -205,8 +211,8 @@ D ${d}%
 // закончить игру
 function quizOver() {
   soundClick('sourse/q6-2000-clock.mp3', true)
-  
- refs.gameOverText.innerHTM = `«Никогда не сдавайся, даже когда должен». — Келли Криг`
+
+//  refs.gameOverText.innerHTM = `«Никогда не сдавайся, даже когда должен». — Келли Криг`
  document.querySelector('.quiz-over-modal').classList.add('show');
 }
 

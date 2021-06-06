@@ -70,8 +70,12 @@ body {
   background-color: rgb(15, 109, 192);
 }
 
+.option-items.opacity {
+  opacity: 0;
+}
 
 .js-audience.disabled,
+.js-fifty.disabled,
 .js-call.disabled {
   pointer-events: none;
   color: rgb(44, 42, 42);
