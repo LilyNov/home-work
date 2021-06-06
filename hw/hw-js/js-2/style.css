@@ -9,6 +9,10 @@ body {
   margin-bottom: 50px;
 }
 
+.quiz .text {
+  margin-bottom: 40px;
+}
+
 .card {
   display: block;
   opacity: 0.95;

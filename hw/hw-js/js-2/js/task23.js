@@ -55,7 +55,7 @@ const startGame = () => {
     return items
       .map(
         option =>
-          `<li class="option option-items col-sm-12 col-md-6 col-lg-4 card" data-id="${indexId++}">
+          `<li class="option option-items card col-sm-12 col-md-4 col-lg-5" data-id="${indexId++}">
           <span>${option.slice(0,3)}</span> ${option.split(' ').splice(1,4).join(' ')}
             </li>`,
       )
@@ -148,6 +148,15 @@ function enableOptions() {
   refs.optionsList.classList.remove('disabled', 'correct', 'wrong');
 }
 
+// function validate() {
+//   if (!refs.optionsList.classList.contains('disabled')) {
+//     alert('Нужно выбрать один вариант ответа');
+//   } else {
+//     randomQuestion();
+//     enableOptions();
+//   }
+// }
+
 // блок подсказок
 function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
@@ -196,6 +205,8 @@ D ${d}%
 // закончить игру
 function quizOver() {
   soundClick('sourse/q6-2000-clock.mp3', true)
+  
+ refs.gameOverText.innerHTM = `«Никогда не сдавайся, даже когда должен». — Келли Криг`
  document.querySelector('.quiz-over-modal').classList.add('show');
 }
 
