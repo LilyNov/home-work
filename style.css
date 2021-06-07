@@ -75,7 +75,8 @@ header .logo {
 
 /* section-quote */
 
-.section.quote {
+.section.quote, .section.projects
+ {
   background-color: #e5e5e5;
 }
 
