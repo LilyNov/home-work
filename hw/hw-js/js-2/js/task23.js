@@ -112,8 +112,8 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
       setTimeout(() => {
         randomQuestion();
         enableOptions();
-      }, 500);
-    }, 300);
+      }, 2000);
+    }, 1000);
 
     score += 1;
     money += 100000;
@@ -127,21 +127,28 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
     soundClick('sourse/khsm_q1-5-wrong.mp3', true);
     setTimeout(() => {
       quizOver();
+    }, 2000);
     }, 1000);
-    }, 500);
   }
   disabledOptions();
 }
 
 const disabledOptions = () => {
   let items = document.querySelectorAll('.option')
+  let interval
   items.forEach(item=> {
     if(item.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
-      setTimeout(() => {
-        item.classList.add('correct')
-      }, 500);
+      interval = setInterval(() => {
+        item.classList.toggle('correct')
+     console.log('correct');
+      }, 100);
     }
+    setTimeout(() => {
+      clearInterval(interval)
+    }, 500);
+   
   })
+  
   refs.optionsList.classList.add('disabled');
 };
 
