@@ -35,6 +35,7 @@ let indexOfQuestion;
 let indexOfPage = 0;
 let score = 0; //результат викторины
 let money = 0;
+let arrAfterFifty = [];
 
 refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 
@@ -99,6 +100,9 @@ function randomQuestion() {
 
 // выбор варианта ответа
 function checkAnswer(evt) {
+ if(evt.target.nodeName !== 'LI') {
+   return
+ }
 if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
     evt.target.classList.add('value');
     setTimeout(() => {
@@ -148,15 +152,23 @@ function enableOptions() {
 // блок подсказок
 function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
-  let randomNum = Math.floor(Math.random() * 3);
-  indexOfQuestion = completedAnswers[completedAnswers.length - 1];
-  refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
-
+  let randomNum;
+  if(arrAfterFifty.lastIndexOf !=0) {
+    for (let index = 0; index < arrAfterFifty.length; index++) {
+      randomNum = arrAfterFifty[index].dataset.id
+      refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
+    }
+  } else {
+    randomNum = Math.floor(Math.random() * 3);
+    indexOfQuestion = completedAnswers[completedAnswers.length - 1];
+    refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
+  }
   document.querySelector('.task-over-modal').classList.add('show');
   refs.btnHelpFriend.classList.add('disabled');
 }
 
 function helpFiftyFifty() {
+  soundClick('sourse/khsm_50-50.mp3', true)
   let item = document.querySelectorAll('.option')
   let answerId = quizQuestions[indexOfQuestion].rightAnswer;
   let itemId = 0;
@@ -171,6 +183,13 @@ function helpFiftyFifty() {
 
   item[itemId].classList.add('opacity');
   item[itemId2].classList.add('opacity');
+
+  item.forEach(item => {
+    if(!item.classList.contains('opacity')) {
+     arrAfterFifty.push(item);
+     return(arrAfterFifty);
+    }
+  })
   refs.btnHelpFifty.classList.add('disabled');
 }
 
@@ -179,8 +198,33 @@ function askAudience() {
   let b = Math.floor(Math.random() * 100);
   let c = Math.floor(Math.random() * 100);
   let d = Math.floor(Math.random() * 100);
+  let list = createList(a, b, c, d);
 
-  const createList = (a,b,c,d) => {
+  if(arrAfterFifty.length !=0){
+    let id1 = arrAfterFifty[0].dataset.id 
+    let id2 = arrAfterFifty[1].dataset.id
+
+      if ((id1 == 0 && id2 == 1) || (id1 == 1 && id2 == 0)) {
+        list = createList(a, b, c = ' ', d = ' ')
+      }
+      else if ((id1 == 0 && id2 == 2) || (id1 == 2 && id2 == 0)) {
+        list = createList(a, b = ' ', c, d = ' ')
+      }
+      else if ((id1 == 0 && id2 == 3) || id1 == 3 && id2 == 0) {
+        list = createList(a, b = ' ', c = ' ', d)
+      }
+      else if ((id1 == 2 && id2 == 1) || (id1 == 1 && id2 == 2)) {
+        list = createList(a = ' ', b, c, d = ' ')
+      }
+      else if ((id1 == 2 && id2 == 3) || (id1 == 3 && id2 == 2)) {
+        list = createList(a = ' ', b = ' ', c, d)
+      }
+      else if ((id1 == 3 && id2 == 1) || (id1 == 1 && id2 == 3)) {
+        list = createList(a = ' ', b, c = ' ', d)
+      }
+  };
+
+  function createList(a,b,c,d) {
     soundClick('sourse/khsm_phone_end.mp3', true)
     return  (`
     А ${a}%
@@ -202,7 +246,7 @@ D ${d}%
     `)
 
   };
-  const list = createList(a, b, c, d);
+  
   refs.help.innerHTML = list
   document.querySelector('.task-over-modal').classList.add('show');
   refs.btnAskAudience.classList.add('disabled');
