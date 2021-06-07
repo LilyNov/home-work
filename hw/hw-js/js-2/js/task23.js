@@ -184,12 +184,12 @@ function callToFriend() {
     for (let index = 0; index < arrAfterFifty.length; index++) {
       randomNum = arrAfterFifty[index].dataset.id
       refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
+      arrAfterFifty = [];
     }
   } else {
     randomNum = Math.floor(Math.random() * 3);
     indexOfQuestion = completedAnswers[completedAnswers.length - 1];
     refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
-    console.log(2);
   }
   document.querySelector('.task-over-modal').classList.add('show');
   refs.btnHelpFriend.classList.add('disabled');
@@ -250,6 +250,7 @@ function askAudience() {
       else if ((id1 == 3 && id2 == 1) || (id1 == 1 && id2 == 3)) {
         list = createList(a = ' ', b, c = ' ', d);
       }
+      arrAfterFifty = [];
   };
 
   function createList(a,b,c,d) {
