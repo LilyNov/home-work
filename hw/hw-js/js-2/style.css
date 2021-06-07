@@ -15,13 +15,6 @@ body {
   font-size: 30px;
 }
 
-.timer > .field {
-  padding: 10px;
-  border-radius: 3px;
-  background: #00bf96;
-  display: inline-block;
-}
-
 .value {
   display: inline-block;
   padding: 15px;
@@ -46,6 +39,7 @@ body {
 
 .timer, .total {
   height: 90px;
+  pointer-events: none;
 }
 
 .card.text {

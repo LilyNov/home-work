@@ -181,7 +181,7 @@ function enableOptions() {
 function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
   let randomNum;
-  if(arrAfterFifty.lastIndexOf !=0) {
+  if(arrAfterFifty.length !=0) {
     for (let index = 0; index < arrAfterFifty.length; index++) {
       randomNum = arrAfterFifty[index].dataset.id
       refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
@@ -190,6 +190,7 @@ function callToFriend() {
     randomNum = Math.floor(Math.random() * 3);
     indexOfQuestion = completedAnswers[completedAnswers.length - 1];
     refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
+    console.log(2);
   }
   document.querySelector('.task-over-modal').classList.add('show');
   refs.btnHelpFriend.classList.add('disabled');
@@ -233,22 +234,22 @@ function askAudience() {
     let id2 = arrAfterFifty[1].dataset.id
 
       if ((id1 == 0 && id2 == 1) || (id1 == 1 && id2 == 0)) {
-        list = createList(a, b, c = ' ', d = ' ')
+        list = createList(a, b, c = ' ', d = ' ');
       }
       else if ((id1 == 0 && id2 == 2) || (id1 == 2 && id2 == 0)) {
-        list = createList(a, b = ' ', c, d = ' ')
+        list = createList(a, b = ' ', c, d = ' ');
       }
       else if ((id1 == 0 && id2 == 3) || id1 == 3 && id2 == 0) {
-        list = createList(a, b = ' ', c = ' ', d)
+        list = createList(a, b = ' ', c = ' ', d);
       }
       else if ((id1 == 2 && id2 == 1) || (id1 == 1 && id2 == 2)) {
-        list = createList(a = ' ', b, c, d = ' ')
+        list = createList(a = ' ', b, c, d = ' ');
       }
       else if ((id1 == 2 && id2 == 3) || (id1 == 3 && id2 == 2)) {
-        list = createList(a = ' ', b = ' ', c, d)
+        list = createList(a = ' ', b = ' ', c, d);
       }
       else if ((id1 == 3 && id2 == 1) || (id1 == 1 && id2 == 3)) {
-        list = createList(a = ' ', b, c = ' ', d)
+        list = createList(a = ' ', b, c = ' ', d);
       }
   };
 
@@ -271,8 +272,7 @@ D ${d}%
 <div class="progress">
   <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: ${d}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-    `)
-
+    `);
   };
   
   refs.help.innerHTML = list
