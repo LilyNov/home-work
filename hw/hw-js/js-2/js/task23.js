@@ -140,13 +140,11 @@ const disabledOptions = () => {
     if(item.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
       interval = setInterval(() => {
         item.classList.toggle('correct')
-     console.log('correct');
       }, 100);
     }
     setTimeout(() => {
       clearInterval(interval)
-    }, 500);
-   
+    }, 1000);
   })
   
   refs.optionsList.classList.add('disabled');

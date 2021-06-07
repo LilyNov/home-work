@@ -9,8 +9,20 @@ body {
   margin-bottom: 50px;
 }
 
+.card.text {
+  width: 80%;
+}
+
 .quiz .text {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
+ 
+}
+
+.question {
+  text-align: center;
+  font-size: 22px;
 }
 
 .card {
@@ -22,11 +34,16 @@ body {
   color: #fff;
   border-radius: 10px ;
   border: 1px solid yellow;
-  cursor: pointer;
 }
 
-.card:hover{
+.quiz .option-items {
+  width: 180px;
+}
+
+.option:hover, 
+.tips .card:hover{
   background-color: rgba(8, 33, 97, 0.8);
+  cursor: pointer;
 }
 
 .tips .card {
@@ -35,11 +52,6 @@ body {
   border-radius: 50%;
   border: 3px solid white;
   text-align: center;
-}
-
-.question {
-  text-align: center;
-  margin: 0;
 }
 
 .options {
