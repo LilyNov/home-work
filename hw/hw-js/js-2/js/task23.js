@@ -19,6 +19,8 @@ const refs = {
   btnAskAudience: document.querySelector('.js-audience'),
   help: document.querySelector('[data-value="answer"]'),
   gameOverText: document.querySelector('[data-value="js-over-text"]'),
+  mins: document.querySelector('[data-value="mins"]'),
+  secs: document.querySelector('[data-value="secs"]')
 };
 
 window.addEventListener('load', randomQuestion);
@@ -36,9 +38,27 @@ let indexOfPage = 0;
 let score = 0; //результат викторины
 let money = 0;
 let arrAfterFifty = [];
+let textWinner = `Вы выиграли 1 000 000! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". Лопе де Вега`;
+let textGameOver = `«Никогда не сдавайся, даже когда должен». Келли Криг`;
+let textTimeOver = `Время вышло!`
 
 refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 
+// таймер
+let countdown = 15 * 60 * 1000;
+let timerId = setInterval(() => {
+  countdown -= 1000;
+  let mins = Math.floor(countdown / (60 * 1000));
+  let secs = Math.floor((countdown - (mins * 60 * 1000)) / 1000); 
+
+  if (countdown <= 0) {
+    quizOver(textTimeOver);
+  } else {
+    refs.mins.textContent = mins; 
+    refs.secs.textContent = secs; 
+  }
+
+}, 1000); 
 
 // аудио
 function soundClick(src, play) {
@@ -79,7 +99,9 @@ function randomQuestion() {
   let hitDublicate;
 
   if (indexOfPage == quizQuestions.length) {
-    quizOver();
+    soundClick('sourse/out-of-commercials-2008.mp3', true)
+    quizOver(textWinner);
+    createListOver(list)
   } else {
     if (completedAnswers.length > 0) {
       hitDublicate = completedAnswers.some(num => num == randomNum);
@@ -126,7 +148,8 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
     evt.target.classList.add('wrong');
     soundClick('sourse/khsm_q1-5-wrong.mp3', true);
     setTimeout(() => {
-      quizOver();
+      soundClick('sourse/q6-2000-clock.mp3', true)
+      quizOver(textGameOver);
     }, 2000);
     }, 1000);
   }
@@ -258,10 +281,9 @@ D ${d}%
 }
 
 // закончить игру
-function quizOver() {
-  soundClick('sourse/q6-2000-clock.mp3', true)
-
-//  refs.gameOverText.innerHTM = `«Никогда не сдавайся, даже когда должен». — Келли Криг`
+function quizOver(listOver) {
+clearInterval(timerId);
+refs.gameOverText.innerHTML = listOver;
  document.querySelector('.quiz-over-modal').classList.add('show');
 }
 

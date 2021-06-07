@@ -15,7 +15,12 @@
 <main>
     <section class="quiz">
         <div class="container row">
-            <div class="card col-sm-12 col-md-3 col-lg-2 mb-5 ml-auto text-center">
+            <div class="timer card card col-sm-12 col-md-3 col-lg-2" id="timer-1">
+                    <span class="value" data-value="mins">0</span>
+                    <span class="label">:</span>
+                    <span class="value" data-value="secs">0</span>
+            </div>
+            <div class="card total col-sm-12 col-md-3 col-lg-2 mb-5 ml-auto text-center">
                 Вопрос 
                 <span class="number-of-question"></span> из
                 <span class="number-of-all-questions"></span><br>
@@ -67,7 +72,7 @@
                     <h5 class="modal-title" id="staticBackdropLabel">Спасибо за игру!</h5>
                 </div>
                 <div class="modal-body">
-                    <p data-value="js-over-text">«Никогда не сдавайся, даже когда должен». — Келли Криг</p>
+                    <p data-value="js-over-text"></p>
                     <p>Попробовать снова?</p>
                 </div>
                 <div class="modal-footer">

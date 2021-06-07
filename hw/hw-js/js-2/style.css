@@ -5,8 +5,47 @@ body {
   background-size: cover;
 }
 
+.timer {
+  margin-top: 120px;
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+.timer > .field {
+  padding: 10px;
+  border-radius: 3px;
+  background: #00bf96;
+  display: inline-block;
+}
+
+.value {
+  display: inline-block;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 3px;
+  background: rgb(21, 55, 156);
+}
+
+.label {
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+/* игра */
 .quiz {
   margin-bottom: 50px;
+}
+
+.quiz .container {
+  align-items: end;
+}
+
+.timer, .total {
+  height: 90px;
 }
 
 .card.text {
@@ -17,7 +56,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
- 
 }
 
 .question {
