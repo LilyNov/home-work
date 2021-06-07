@@ -38,7 +38,7 @@ let indexOfPage = 0;
 let score = 0; //результат викторины
 let money = 0;
 let arrAfterFifty = [];
-let textWinner = `Вы выиграли 1 000 000! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". Лопе де Вега`;
+let textWinner = `Вы выиграли 1 000 000! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". <br/> Лопе де Вега`;
 let textGameOver = `«Никогда не сдавайся, даже когда должен». Келли Криг`;
 let textTimeOver = `Время вышло!`
 
@@ -48,8 +48,8 @@ refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 let countdown = 15 * 60 * 1000;
 let timerId = setInterval(() => {
   countdown -= 1000;
-  let mins = Math.floor(countdown / (60 * 1000));
-  let secs = Math.floor((countdown - (mins * 60 * 1000)) / 1000); 
+  let mins = String(Math.floor(countdown / (60 * 1000))).padStart(2, '0');
+  let secs = String(Math.floor((countdown - (mins * 60 * 1000)) / 1000)).padStart(2, '0');
 
   if (countdown <= 0) {
     quizOver(textTimeOver);
