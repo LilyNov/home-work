@@ -63,6 +63,8 @@ function soundClick(src, play) {
 
 // блок с вопросами
 const startGame = () => {
+  arrAfterFifty = [];
+  console.log(arrAfterFifty);
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
   refs.optionsList.innerHTML = list;
@@ -179,7 +181,6 @@ function callToFriend() {
     for (let index = 0; index < arrAfterFifty.length; index++) {
       randomNum = arrAfterFifty[index].dataset.id
       refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
-      arrAfterFifty = [];
     }
   } else {
     randomNum = Math.floor(Math.random() * 3);
@@ -244,8 +245,9 @@ function askAudience() {
       }
       else if ((id1 == 3 && id2 == 1) || (id1 == 1 && id2 == 3)) {
         list = createList(a = ' ', b, c = ' ', d);
+      } else {
+        createList(a, b, c, d)
       }
-      arrAfterFifty = [];
   };
 
   function createList(a,b,c,d) {
