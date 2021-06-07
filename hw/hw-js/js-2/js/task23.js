@@ -139,7 +139,6 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
 
     score += 1;
     money += 100000;
-    console.log(money);
 
   } else {
     evt.target.classList.add('value');
