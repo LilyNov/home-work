@@ -8,11 +8,7 @@ const refs = {
   answersTracker: document.querySelector('[data-value="answers-tracker"]'),
   correctAnswer: document.querySelector('[data-value="correct-answer"]'),
   totalMoney: document.querySelector('[data-value="total-money"]'),
-  numberOfAllquestion2: document.querySelector(
-    '[data-value="number-of-all-questions-2"]',
-  ),
   btnCloseModal: document.querySelector('[data-value="close-modal"]'),
-  btnFinish: document.querySelector('[data-value="close-modal-finish"]'),
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
   btnHelpFriend: document.querySelector('.js-call'),
   btnHelpFifty: document.querySelector('.js-fifty'),
@@ -26,17 +22,15 @@ const refs = {
 window.addEventListener('load', randomQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
 refs.btnCloseModal.addEventListener('click', closeModal);
-refs.btnFinish.addEventListener('click', closeModal);
 refs.btnTryAgain.addEventListener('click', tryAgain);
 refs.btnHelpFriend.addEventListener('click', callToFriend);
 refs.btnHelpFifty.addEventListener('click', helpFiftyFifty);
 refs.btnAskAudience.addEventListener('click', askAudience);
 
 let indexId = 0;
-let indexOfQuestion;
+let indexOfQuestion = -1;
 let indexOfPage = 0;
 let score = 0; //результат викторины
-let money = 0;
 let arrAfterFifty = [];
 let textWinner = `Вы выиграли 1 000 000! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". <br/> Лопе де Вега`;
 let textGameOver = `«Никогда не сдавайся, даже когда должен». Келли Криг`;
@@ -83,6 +77,8 @@ const startGame = () => {
       )
       .join('');
   }
+  let money = quizQuestions[indexOfQuestion].money;
+console.log(money);
 
   // следующая страница
   indexId = 0;
@@ -91,13 +87,12 @@ const startGame = () => {
   indexOfPage += 1;
 };
 
-// вопросы рандомно
+// вопросы рандомно (были, если randomNum изменить с рандом, то будут рандомно)
 let completedAnswers = [];
 
 function randomQuestion() {
-  let randomNum = Math.floor(Math.random() * quizQuestions.length);
+  let randomNum = indexOfQuestion + 1;
   let hitDublicate;
-
   if (indexOfPage == quizQuestions.length) {
     soundClick('sourse/out-of-commercials-2008.mp3', true)
     quizOver(textWinner);
@@ -138,7 +133,6 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
     }, 1000);
 
     score += 1;
-    money += 100000;
 
   } else {
     evt.target.classList.add('value');
@@ -179,6 +173,7 @@ function enableOptions() {
 // блок подсказок
 function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
+  refs.btnHelpFriend.classList.add('disabled');
   let randomNum;
   if(arrAfterFifty.length !=0) {
     for (let index = 0; index < arrAfterFifty.length; index++) {
@@ -192,10 +187,10 @@ function callToFriend() {
     refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
   }
   document.querySelector('.task-over-modal').classList.add('show');
-  refs.btnHelpFriend.classList.add('disabled');
 }
 
 function helpFiftyFifty() {
+  refs.btnHelpFifty.classList.add('disabled');
   soundClick('sourse/khsm_50-50.mp3', true)
   let item = document.querySelectorAll('.option')
   let answerId = quizQuestions[indexOfQuestion].rightAnswer;
@@ -218,10 +213,10 @@ function helpFiftyFifty() {
      return(arrAfterFifty);
     }
   })
-  refs.btnHelpFifty.classList.add('disabled');
 }
 
 function askAudience() {
+  refs.btnAskAudience.classList.add('disabled');
   let a = Math.floor(Math.random() * 100);
   let b = Math.floor(Math.random() * 100);
   let c = Math.floor(Math.random() * 100);
@@ -277,7 +272,6 @@ D ${d}%
   
   refs.help.innerHTML = list
   document.querySelector('.task-over-modal').classList.add('show');
-  refs.btnAskAudience.classList.add('disabled');
 }
 
 // закончить игру
@@ -288,7 +282,7 @@ refs.gameOverText.innerHTML = listOver;
 }
 
 function closeModal() {
-  document.querySelector('.quiz-over-modal').classList.remove('show');
+  // document.querySelector('.quiz-over-modal').classList.remove('show');
   document.querySelector('.task-over-modal').classList.remove('show');
 }
 

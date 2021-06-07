@@ -15,16 +15,20 @@
 <main>
     <section class="quiz">
         <div class="container row justify-content-between">
-            <div class="timer card card col-sm-12 col-md-3 col-lg-2" id="timer-1">
+            <div class="timer card col-sm-12 col-md-3 col-lg-2" id="timer-1">
                     <span class="value" data-value="mins">0</span>
                     <span class="label">:</span>
                     <span class="value" data-value="secs">0</span>
+            </div>
+            <div class="card col-sm-12 col-md-3 col-lg-2">
+                Банк
+                <!-- Bank создать и добавить с классом и контентом-->
             </div>
             <div class="card total col-sm-12 col-md-3 col-lg-2 mb-5 text-center">
                 Вопрос 
                 <span class="number-of-question"></span> из
                 <span class="number-of-all-questions"></span><br>
-                Ваш выигрыш: <span data-value="total-money">0</span> $
+                Цена вопроса: <span data-value="total-money">0</span> $
             </div>
         </div>
         <div class="card text justify-content-center">
@@ -76,7 +80,6 @@
                     <p>Попробовать снова?</p>
                 </div>
                 <div class="modal-footer">
-                    <a type="button" class="btn btn-secondary" data-value="close-modal-finish">нет</a>
                     <a type="button" class="btn btn-warning" data-value="btn-try-again">да</a>
                 </div>
             </div>
