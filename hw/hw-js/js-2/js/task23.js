@@ -8,6 +8,7 @@ const refs = {
   answersTracker: document.querySelector('[data-value="answers-tracker"]'),
   correctAnswer: document.querySelector('[data-value="correct-answer"]'),
   totalMoney: document.querySelector('[data-value="total-money"]'),
+  bank: document.querySelector('[data-value="bank"]'),
   btnCloseModal: document.querySelector('[data-value="close-modal"]'),
   btnTryAgain: document.querySelector('[data-value="btn-try-again"]'),
   btnHelpFriend: document.querySelector('.js-call'),
@@ -19,7 +20,7 @@ const refs = {
   secs: document.querySelector('[data-value="secs"]')
 };
 
-window.addEventListener('load', randomQuestion);
+window.addEventListener('load', renderQuestion);
 refs.optionsList.addEventListener('click', checkAnswer);
 refs.btnCloseModal.addEventListener('click', closeModal);
 refs.btnTryAgain.addEventListener('click', tryAgain);
@@ -79,41 +80,40 @@ const startGame = () => {
       .join('');
   }
   let money = quizQuestions[indexOfQuestion].money;
-console.log(money);
+  refs.totalMoney.innerHTML = money;
 
   // следующая страница
   indexId = 0;
   refs.numberOfquestion.innerHTML = indexOfPage + 1;
-  refs.totalMoney.innerHTML = money;
   indexOfPage += 1;
 };
 
-// вопросы рандомно (были, если randomNum изменить с рандом, то будут рандомно)
+// вопросы 
 let completedAnswers = [];
 
-function randomQuestion() {
-  let randomNum = indexOfQuestion + 1;
-  let hitDublicate;
+function renderQuestion() {
+  let index = indexOfQuestion + 1;
   if (indexOfPage == quizQuestions.length) {
     soundClick('sourse/out-of-commercials-2008.mp3', true)
     quizOver(textWinner);
-    createListOver(list)
-  } else {
-    if (completedAnswers.length > 0) {
-      hitDublicate = completedAnswers.some(num => num == randomNum);
-      if (hitDublicate) {
-        randomQuestion();
-      } else {
-        indexOfQuestion = randomNum;
+  } else if (completedAnswers.length >= 0) {
+        indexOfQuestion = index;
         startGame();
-      }
     }
-    if (completedAnswers == 0) {
-      indexOfQuestion = randomNum;
-      startGame();
-    }
-  }
   completedAnswers.push(indexOfQuestion);
+  userBank()
+}
+
+// несгораемая сумма
+function userBank() {
+  if(completedAnswers.length == 6){
+    let moneyInBank = quizQuestions[4].money
+     refs.bank.innerHTML = moneyInBank
+   }
+   if (completedAnswers.length == 11){
+    let moneyInBank = quizQuestions[9].money
+    refs.bank.innerHTML = moneyInBank
+   }
 }
 
 // выбор варианта ответа
@@ -128,9 +128,9 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
       evt.target.classList.add('correct');
       soundClick('sourse/khsm_q1-5-correct-o.mp3', true)
       setTimeout(() => {
-        randomQuestion();
+        renderQuestion();
         enableOptions();
-      }, 2000);
+      }, 1000);
     }, 1000);
 
     score += 1;
@@ -144,7 +144,7 @@ if (evt.target.dataset.id == quizQuestions[indexOfQuestion].rightAnswer) {
     setTimeout(() => {
       soundClick('sourse/q6-2000-clock.mp3', true)
       quizOver(textGameOver);
-    }, 2000);
+    }, 1000);
     }, 1000);
   }
   disabledOptions();
@@ -278,7 +278,7 @@ function askAudience() {
 // закончить игру
 function quizOver(listOver) {
 clearInterval(timerId);
-refs.gameOverText.textContent = listOver;
+refs.gameOverText.innerHTML = listOver;
  document.querySelector('.quiz-over-modal').classList.add('show');
 }
 

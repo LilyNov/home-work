@@ -4,8 +4,9 @@
 const tableEL = document.querySelector('table')
 
  const styleTd = () => {
-     for (let index = 0; index < 5; index++) {
-         tableEL.rows[index].cells[index].style.backgroundColor = 'red'
+     for (let index = 0; index < tableEL.rows.length; index++) {
+         let td = tableEL.rows[index].cells[index]
+        td.style.backgroundColor = 'red'
      }
  }
  styleTd()
