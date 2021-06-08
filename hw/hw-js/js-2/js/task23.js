@@ -64,7 +64,6 @@ function soundClick(src, play) {
 // блок с вопросами
 const startGame = () => {
   arrAfterFifty = [];
-  console.log(arrAfterFifty);
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
   refs.optionsList.innerHTML = list;
@@ -253,23 +252,23 @@ function askAudience() {
   function createList(a,b,c,d) {
     soundClick('sourse/khsm_phone_end.mp3', true)
     return  (`
-    А ${a}%
-    <div class="progress">
-  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${a}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-В ${b}%
-<div class="progress">
-  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${b}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-С ${c}%
-<div class="progress">
-  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: ${c}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-D ${d}%
-<div class="progress">
-  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: ${d}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-    `);
+      А: ${a}%
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${a}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      В: ${b}%
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${b}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      С: ${c}%
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: ${c}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      D: ${d}%
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: ${d}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+          `);
   };
   
   refs.help.innerHTML = list
@@ -279,12 +278,11 @@ D ${d}%
 // закончить игру
 function quizOver(listOver) {
 clearInterval(timerId);
-refs.gameOverText.innerHTML = listOver;
+refs.gameOverText.textContent = listOver;
  document.querySelector('.quiz-over-modal').classList.add('show');
 }
 
 function closeModal() {
-  // document.querySelector('.quiz-over-modal').classList.remove('show');
   document.querySelector('.task-over-modal').classList.remove('show');
 }
 
