@@ -3,6 +3,7 @@ body {
   background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202008/3113/WAMtNNBkcumOZVbIXXz1bJeO.png?w=1920&thumb=false');
   background-repeat: no-repeat;
   background-size: cover;
+  user-select: none;
 }
 
 .timer {
