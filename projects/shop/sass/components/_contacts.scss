@@ -1,0 +1,18 @@
+.contacts {
+  background-image: linear-gradient(
+      to right,
+      rgba(248, 248, 248, 0.5),
+      rgba(180, 169, 169, 0.5)
+    ),
+    url('../img/hero/objects-6.jpg');
+}
+
+.section-contacts {
+  text-align: center;
+  .carousel-cust {
+    width: 70%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

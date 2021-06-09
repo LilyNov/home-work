@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <!-- Подключаем Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <section class="quiz">
+        <div class="row container">
+            <div class="timer card col-sm-12 col-md-3 col-lg-3 ml-auto" id="timer-1">
+                    <span class="value" data-value="mins">0</span>
+                    <span class="label">:</span>
+                    <span class="value" data-value="secs">0</span>
+            </div>
+            <div class=" bank card col-sm-12 col-md-3 col-lg-3">
+                Банк:<span class="ml-4" data-value="bank">0</span> $
+                <!-- Bank создать и добавить с классом и контентом-->
+            </div>
+            <div class="total card col-sm-12 col-md-3 col-lg-3 mb-5 text-center">
+                Вопрос 
+                <span class="number-of-question"></span> из
+                <span class="number-of-all-questions"></span><br>
+                Цена вопроса: <span data-value="total-money">0</span> $
+            </div>
+        </div>
+        <div class="card text justify-content-center">
+            <h3 class="card-title question"></h3>
+        </div>
+        <div class="container ">
+            <ul class="options justify-content-center row">
+                <!-- questions -->
+            </ul>
+        </div>
+    </section>
+
+    <section class="tips">
+        <div class="container-fluid">
+            <ul class="justify-content-center row">
+                <li class="card col-sm-12 col-md-6 col-lg-4 js-call">
+                    Звонок другу
+                </li>
+                <li class="card col-sm-12 col-md-6 col-lg-4 js-fifty">
+                    50/50
+                </li>
+                <li class="card col-sm-12 col-md-6 col-lg-2 js-audience">
+                    Помощь зала
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+    <!-- Modal help -->
+    <div class="task-over-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p data-value="answer"></p>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-secondary" data-value="close-modal">ok</a>
+            </div>
+        </div>
+    </div>
+    <!-- Modal finish -->
+    <div class="quiz-over-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Спасибо за игру!</h5>
+                </div>
+                <div class="modal-body">
+                    <p data-value="js-over-text"></p>
+                    <p>Попробовать снова?</p>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-warning" data-value="btn-try-again">да</a>
+                </div>
+            </div>
+    </div>
+
+    <script src="./js/script.js" type='module'></script>
+<!-- Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+</body>
+</html>
