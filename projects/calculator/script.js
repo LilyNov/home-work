@@ -31,6 +31,10 @@ class Calculator {
             return
         }
         this.currentOperand = this.currentOperand.toString() + number.toString();
+        if(this.currentOperand.length >= 10) {
+             this.currentOperand = this.currentOperand.substring(0, 10);
+            
+        }
     }
 
     chooseOperation(operation) {
@@ -71,7 +75,7 @@ class Calculator {
             default:
                 break;
         }
-        this.currentOperand = computed;
+        this.currentOperand = computed.toString().substring(0, 10);
         this.operation = undefined;
         this.prevOperand = '';
     }
