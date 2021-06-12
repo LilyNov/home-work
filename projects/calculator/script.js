@@ -18,8 +18,7 @@ class Calculator {
     clear () {
         this.prevOperand = '';
         this.currentOperand = '';
-        this.operation = undefined;
-        
+        this.operation = null;
     }
 
     delete() {
@@ -32,7 +31,7 @@ class Calculator {
         }
         this.currentOperand = this.currentOperand.toString() + number.toString();
         if(this.currentOperand.length >= 10) {
-             this.currentOperand = this.currentOperand.substring(0, 10);
+             this.currentOperand = this.currentOperand.substring(0, 10); // max 10 numbers on display
             
         }
     }
@@ -54,8 +53,8 @@ class Calculator {
         const prev = parseFloat(this.prevOperand);
         const current = parseFloat(this.currentOperand);
         if(isNaN(prev) || isNaN(current)) {
-            return
-        }
+            return 
+        } 
         switch (this.operation) {
             case '%':
                 computed = ((prev / current) *100);
@@ -75,25 +74,23 @@ class Calculator {
             default:
                 break;
         }
+
         this.currentOperand = computed.toString().substring(0, 10);
-        this.operation = undefined;
+        this.operation = null;
         this.prevOperand = '';
     }
 
-    getDisplayNumber(number) {
-        const floatNumber = parseFloat(number);
-        if(isNaN(floatNumber)) {
-            return '';
-        }
-        return floatNumber.toLocaleString('en') //,
-    }
-
     updateDisplay() {
-        this.currentElement.innerHTML = this.getDisplayNumber(this.currentOperand);
+        this.currentElement.innerHTML = this.currentOperand;
         if (this.operation != null) {
-            this.prevElement.innerHTML = `${this.getDisplayNumber(this.prevOperand)} ${this.operation}`;
+            this.prevElement.innerHTML = `${this.prevOperand} ${this.operation}`;
         } else {
             this.prevElement.innerHTML = '';
+        }
+
+        if(this.currentOperand === 'Infinity') {
+            this.prevElement.innerHTML = ''
+            this.currentElement.innerHTML = 'ошибка'
         }
     }
 }

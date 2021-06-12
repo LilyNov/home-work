@@ -1,16 +1,16 @@
-const ulEl = document.querySelector('ul')
-console.log(ulEl);
-let arr = []
-
-const textLi = (arr) => {
-    while (true){
-        let userText = prompt('Введите данные для списка');
-        if(userText == null) break;
-        arr.push(userText);
-    }
-
-     return arr.map(li => `<li>${li}</li>`).join(' ');
+const refs = {
+    openMenu: document.querySelector('.js-menu'),
+    spanOpen: document.getElementById('open'),
+    spanClose: document.getElementById('close'),
+    menu: document.getElementById('menu-list')
 }
 
-let text = textLi(arr);
-ulEl.innerHTML = text;
+refs.openMenu.addEventListener('click', openMenuList)
+
+function openMenuList() {
+    refs.spanOpen.classList.toggle('is-close')
+
+    refs.spanClose.classList.toggle('is-open')
+    refs.menu.classList.toggle('is-open');
+
+}

@@ -17,9 +17,7 @@
     <input type="button" id="hider" value="Нажмите, чтобы спрятать текст" />
  <div id="text">Текст</div>
     <script>
-        const inputEl = document.getElementById('hider');
-        const divEl = document.getElementById('text');
-        inputEl.addEventListener('click', () =>  divEl.hidden = true);
+        hider.onclick = () => text.hidden = true;
     </script>
 </body>
 </html>
