@@ -6,6 +6,7 @@ const btnDeleteElement = document.querySelector('[data-del]');
 const btnOperationsElements = document.querySelectorAll('[data-operation]');
 const btnNumbersElements = document.querySelectorAll('[data-num]');
 const btnEqualElement = document.querySelector('[data-equal]');
+const btnVigElement = document.querySelector('[data-vig]')
 
 
 class Calculator {
@@ -29,11 +30,12 @@ class Calculator {
         if(number === '.' && this.currentOperand.includes('.')) {
             return
         }
-        this.currentOperand = this.currentOperand.toString() + number.toString();
         if(this.currentOperand.length >= 10) {
              this.currentOperand = this.currentOperand.substring(0, 10); // max 10 numbers on display
             
         }
+
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
     chooseOperation(operation) {
@@ -54,11 +56,9 @@ class Calculator {
         const current = parseFloat(this.currentOperand);
         if(isNaN(prev) || isNaN(current)) {
             return 
-        } 
+        }
+
         switch (this.operation) {
-            case '%':
-                computed = ((prev / current) *100);
-                break;
             case '÷':
                 computed = prev / current;
                 break;
@@ -74,8 +74,40 @@ class Calculator {
             default:
                 break;
         }
-
+        console.log(computed);
+        
         this.currentOperand = computed.toString().substring(0, 10);
+        this.operation = null;
+        this.prevOperand = '';
+    }
+
+    computeVig() {
+        let computed;
+        const prev = parseFloat(this.prevOperand);
+        const current = parseFloat(this.currentOperand);
+        if(isNaN(prev) || isNaN(current)) {
+            return 
+        }
+        let vig = current*prev/100;
+
+            switch (this.operation) {
+                case '÷':
+                    computed = prev / (current/100);
+                    break;
+                case '×':
+                    computed = prev * (current/100);;
+                    break;
+                case '-':
+                    computed = prev - vig;
+                    break;
+                case '+':
+                    computed = prev + vig;
+                    break;
+                default:
+                    break;
+            }
+
+        this.currentOperand = computed.toFixed(2).substring(0, 10);
         this.operation = null;
         this.prevOperand = '';
     }
@@ -91,6 +123,10 @@ class Calculator {
         if(this.currentOperand === 'Infinity') {
             this.prevElement.innerHTML = ''
             this.currentElement.innerHTML = 'ошибка'
+        }
+        if(this.operation == '%') {
+            this.prevElement.innerHTML = ''
+            this.currentElement.innerHTML = this.prevOperand
         }
     }
 }
@@ -114,7 +150,14 @@ btnOperationsElements.forEach (button => {
 btnEqualElement.addEventListener('click', () => {
     calculator.compute();
     calculator.updateDisplay();
+    calculator.clear();
 });
+
+btnVigElement.addEventListener('click', () => {
+    calculator.computeVig();
+    calculator.updateDisplay();
+    calculator.clear();
+})
 
 btnClearElement.addEventListener('click', () => {
     calculator.clear();

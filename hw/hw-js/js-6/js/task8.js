@@ -2,18 +2,18 @@ const refs = {
     btnToggleModal: document.querySelector('[data-open-modal]'),
     backdrop: document.querySelector('[data-backdrop]'),
     modal: document.querySelector('[data-modal]'),
-    body: document.querySelector('body')
+    body: document.querySelector('body'),
 }
 
 refs.btnToggleModal.addEventListener('click', toggleModal);
-refs.body.addEventListener('keydown', selectEsc)
+refs.body.addEventListener('keydown', selectEsc);
+
 
 function showPrompt(html){
     refs.modal.innerHTML = html;
     refs.body.style.overflow = 'hidden';
     const formElement = document.querySelector('[data-form]');
     const inputElement = document.querySelector('[data-input]')
-    console.dir(inputElement);
     inputElement.focus() //из-за модалки фокус теряется, не пойму как пофиксить, не работает ни так ни через autofocus
     formElement.addEventListener('submit', getInputText)
 }
@@ -23,7 +23,7 @@ function getInputText(evt) {
 
 new FormData(evt.currentTarget).forEach(element => {
     if(element === '') return
-    alert(`Сегодня ${element} число`);
+    alert(`Ваш ответ: ${element}`);
 });
     evt.currentTarget.reset();
     toggleModal()
@@ -36,17 +36,17 @@ function selectEsc(evt) {
 }
 
 function toggleModal() {
-    refs.backdrop.classList.toggle('is-hidden')
+    refs.backdrop.classList.toggle('is-hidden');
 }
 
 
 showPrompt(`<form class="form" data-form>
 <label>
-    Какое сегодня число?
-    <input type="text" name="text" autocomplete="off" data-input autofocus>
+    Когда начнется лето? &#128512;
+    <input type="text" name="text" autocomplete="off" data-input>
 </label>
 <div>
-    <button type="submit" data-close-modal>ОК</button>
-    <button  data-close-modal>Отмена</button>
+    <button class="link button" type="submit" data-close-modal>ОК</button>
+    <button class="link button" data-close-modal>Отмена</button>
 </div>
 </form>`)

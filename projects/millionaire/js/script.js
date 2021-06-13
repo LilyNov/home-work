@@ -181,7 +181,7 @@ function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
   refs.btnHelpFriend.classList.add('disabled');
   let randomNum;
-  if(arrAfterFifty.length !=0) {
+  if(arrAfterFifty.length != 0) {
     for (let index = 0; index < arrAfterFifty.length; index++) {
       randomNum = arrAfterFifty[index].dataset.id
       refs.help.innerHTML = `Я думаю ответ <b>${quizQuestions[indexOfQuestion]?.options[randomNum]}</b> &#128515;`;
@@ -228,7 +228,7 @@ function askAudience() {
   let d = Math.floor(Math.random() * 100);
   let list = createList(a, b, c, d);
 
-  if(arrAfterFifty.length !=0){
+  if(arrAfterFifty.length != 0){
     let id1 = arrAfterFifty[0].dataset.id 
     let id2 = arrAfterFifty[1].dataset.id
 
