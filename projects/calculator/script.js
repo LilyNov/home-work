@@ -27,14 +27,15 @@ class Calculator {
     }
 
     appendNum(number) {
+        // for only one dott in value on display
         if(number === '.' && this.currentOperand.includes('.')) {
             return
         }
+        // max 10 numbers on display
         if(this.currentOperand.length >= 10) {
-             this.currentOperand = this.currentOperand.substring(0, 10); // max 10 numbers on display
-            
+             this.currentOperand = this.currentOperand.substring(0, 10); 
         }
-
+        //  for long values on display
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
@@ -46,6 +47,7 @@ class Calculator {
             this.compute()
         }
        this.operation = operation ;
+        // currentOperand up to prevOperand on display, when we choose operation
        this.prevOperand = this.currentOperand;
        this.currentOperand = '';
     }
@@ -74,8 +76,8 @@ class Calculator {
             default:
                 break;
         }
-        console.log(computed);
         
+        // update currentOperand and dell old values operation/prevOperand on display
         this.currentOperand = computed.toString().substring(0, 10);
         this.operation = null;
         this.prevOperand = '';
@@ -119,20 +121,17 @@ class Calculator {
         } else {
             this.prevElement.innerHTML = '';
         }
-
+        // for error (number/0)
         if(this.currentOperand === 'Infinity') {
             this.prevElement.innerHTML = ''
             this.currentElement.innerHTML = 'ошибка'
-        }
-        if(this.operation == '%') {
-            this.prevElement.innerHTML = ''
-            this.currentElement.innerHTML = this.prevOperand
         }
     }
 }
 
 const calculator = new Calculator(prevElement, currentElement);
 
+// take number
 btnNumbersElements.forEach (button => {
     button.addEventListener('click', () => {
     calculator.appendNum(button.innerHTML);
@@ -140,6 +139,7 @@ btnNumbersElements.forEach (button => {
         });
     });
 
+// take operation
 btnOperationsElements.forEach (button => {
     button.addEventListener('click', () => {
     calculator.chooseOperation(button.innerHTML)

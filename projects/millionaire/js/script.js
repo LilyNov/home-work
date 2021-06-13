@@ -31,7 +31,7 @@ refs.btnAskAudience.addEventListener('click', askAudience);
 let indexId = 0;
 let indexOfQuestion = -1;
 let indexOfPage = 0;
-let score = 0; //результат викторины
+let score = 0; //result of game
 let arrAfterFifty = [];
 let textWinner = `Вы выиграли 1 000 000! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". <br/> Лопе де Вега`;
 let textGameOver = `«Никогда не сдавайся, даже когда должен». Келли Криг`;
@@ -39,7 +39,7 @@ let textTimeOver = `Время вышло!`
 
 refs.numberOfAllquestion.innerHTML = quizQuestions.length;
 
-// таймер
+// timer
 let countdown = 15 * 60 * 1000;
 let timerId = setInterval(() => {
   countdown -= 1000;
@@ -55,14 +55,14 @@ let timerId = setInterval(() => {
 
 }, 1000); 
 
-// аудио
+// audio
 function soundClick(src, play) {
   const audio = new Audio();
   audio.src = src;
   audio.autoplay = play; 
   }
 
-// блок с вопросами
+// start new game
 const startGame = () => {
   arrAfterFifty = [];
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
@@ -82,13 +82,13 @@ const startGame = () => {
   let money = quizQuestions[indexOfQuestion].money;
   refs.totalMoney.innerHTML = money;
 
-  // следующая страница
+  // next page
   indexId = 0;
   refs.numberOfquestion.innerHTML = indexOfPage + 1;
   indexOfPage += 1;
 };
 
-// вопросы 
+// questions 
 let completedAnswers = [];
 
 function renderQuestion() {
@@ -104,7 +104,7 @@ function renderQuestion() {
   userBank()
 }
 
-// несгораемая сумма
+// guaranteed amount
 function userBank() {
   let moneyInBank;
   if(completedAnswers.length == 6){
@@ -121,7 +121,7 @@ function userBank() {
    } 
 }
 
-// выбор варианта ответа
+// check answer
 function checkAnswer(evt) {
  if(evt.target.nodeName !== 'LI') {
    return
@@ -176,7 +176,7 @@ function enableOptions() {
   refs.optionsList.classList.remove('disabled', 'correct', 'wrong');
 }
 
-// блок подсказок
+// help block
 function callToFriend() {
   soundClick('sourse/khsm_phone_end.mp3', true)
   refs.btnHelpFriend.classList.add('disabled');
@@ -280,7 +280,7 @@ function askAudience() {
   document.querySelector('.task-over-modal').classList.add('show');
 }
 
-// закончить игру
+// game over
 function quizOver(listOver) {
 clearInterval(timerId);
 refs.gameOverText.innerHTML = listOver;
