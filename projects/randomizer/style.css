@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(56, 10, 68);
+    background-image: url('https://cdn.pixabay.com/photo/2019/09/20/22/56/dollar-4492709_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+}

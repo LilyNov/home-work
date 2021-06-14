@@ -20,7 +20,7 @@ function showPrompt(html){
 
 function getInputText(evt) {
     evt.preventDefault()
-
+    
 new FormData(evt.currentTarget).forEach(element => {
     if(element === '') return
     alert(`Ваш ответ: ${element}`);
