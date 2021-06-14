@@ -34,5 +34,5 @@ function randomNum(num, min, max) {
 
 function renderResult() {
     let number = arr.join(', ');
-    refs.result.innerHTML = number;
+    refs.result.innerHTML = `Result: ${number}`;
 }
