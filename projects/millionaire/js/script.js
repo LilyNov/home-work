@@ -48,13 +48,11 @@ const startModal = () => {
     const startGame = document.querySelector('[data-value="start-game"]');
     const modal = document.querySelector('.task-over-modal')
     modal.classList.add('show');
-    modal.style.backgroundColor = 'rgb(3, 27, 99)'
     startGame.addEventListener('click', () => {
       timer()
       document.querySelector('.task-over-modal').classList.remove('show');
       startGame.remove();
       refs.help.innerHTML = '';
-      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
     });
 
     } 
@@ -83,6 +81,7 @@ function soundClick(src, play) {
 
 // start new game
 const startGame = () => {
+    startModal()
   arrAfterFifty = [];
   refs.question.innerHTML = quizQuestions[indexOfQuestion].question;
   const list = createList(quizQuestions[indexOfQuestion].options);
@@ -112,7 +111,6 @@ let completedAnswers = [];
 
 function renderQuestion() {
   let index = indexOfQuestion + 1;
-  startModal()
   if (indexOfPage == quizQuestions.length) {
     soundClick('sourse/out-of-commercials-2008.mp3', true)
   } else if (completedAnswers.length >= 0) {
