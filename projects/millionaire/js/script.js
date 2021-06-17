@@ -321,7 +321,7 @@ function modalText(){
    } else if (completedAnswers.length >= 11 && completedAnswers.length < 15){
     textInModal = 'Поздравляем! Вы выиграли 32000$'
    } else if (completedAnswers.length >= quizQuestions.length){
-    textInModal = `Вы выиграли 1 000 000! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". <br/> Лопе де Вега`;
+    textInModal = `Вы выиграли 1 000 000 $! <br/> "Чем больше трудностей в борьбе, тем и победа будет краше". <br/> Лопе де Вега`;
    }
    if (countdown <= 0) {
     textInModal = `Время вышло!`
